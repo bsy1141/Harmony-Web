@@ -1,0 +1,149 @@
+body{
+    width: 1440px;
+    height: 1024px;
+}
+.title {
+    width: 554px;
+    height: 150px;
+    position:absolute;
+    top:274px;
+    left:151px;
+    font-family: GmarketSansTTF;
+    font-size: 54px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.39;
+    letter-spacing: -1px;
+    color: #19191a;}
+
+.subtitle {
+    width: 456.2px;
+    height: 26px;
+    position:absolute;
+    top:443px;
+    left:151px;
+    font-family: KoPubWorldDotum;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: -0.5px;
+    color: #b3b3b3;}
+.download {
+    width: 165px;
+    height: 40px;
+    position:absolute;
+    top:507px;
+    left:151px;
+    opacity: 0.56;
+    border-radius: 5px;
+    border: solid 1px #000000;}
+.signup{
+    width: 130px;
+    height: 40px;
+    position:absolute;
+    top:20px;
+    left:1159px;
+    opacity: 0.6;
+    border-radius: 5px;
+    border: solid 1px #000000;
+}
+.btn1{
+    width: 91px;
+    height: 17px;
+    position:absolute;
+    top:0px;
+    left:18px;
+    opacity: 0.6;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+}
+.btn2{
+    width: 65px;
+    height: 19px;
+    position:absolute;
+    top:-3px;
+    left:40px;
+    opacity: 0.46;
+    font-family: KoPubWorldDotum;
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.33px;
+    color: #000000;
+}      
+.img1{
+    width:8px;
+    height:10px;
+    position:absolute;
+    top:14px;
+    left:109px;
+}
+.img2{
+    width:12px;
+    height:2px;
+    position:absolute;
+    top:25px;
+    left:107px;
+}
+.Outside {
+    width: 392px;
+    height: 738px;
+    position:absolute;
+    top:286px;
+    left:702px;
+    border-radius: 40px;
+    border: solid 1px #333333;
+    }
+.Inside {
+    width: 388px;
+    height: 732px;
+    position:absolute;
+    top:292px;
+    left:704px;
+    border-radius: 36px;
+    border: solid 1px #cccccc;}
+.screen {
+    width: 376px;
+    height: 720px;
+    position:absolute;
+    top:304px;
+    left:710px;
+    border-radius: 32px;
+    border: solid 1px #333333;
+    }
+.phonebtn1 {
+    width: 5px;
+    height: 112px;
+    position:absolute;
+    top:396px;
+    left:698px;
+    border-radius: 3px;
+    border: solid 1px #333333;}
+.phonebtn2 {
+    width: 5px;
+    height: 56px;
+    position:absolute;
+    top:558px;
+    left:698px;
+    border-radius: 3px;
+    border: solid 1px #333333;}
+.phonebtn3 {
+    width: 5px;
+    height: 56px;
+    position:absolute;
+    top:434px;
+    left:1093px;
+    border-radius: 3px;
+    border: solid 1px #333333;}
