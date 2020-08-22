@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="writeStyle.css">
+    </head>
+
+    <body>
+        <div>
+            <p class="title">게시글 작성</p>         
+        </div>
+        <div>        
+            <input type="image" src="close.png" class="closeButton">   
+        </div>
+
+        <hr class="line">
+
+
+        <div style="position: absolute; left: 34px; margin-top: 66px;">
+            <p class="subTitle">활동 사진</p>
+
+            <div class="picture">
+                <input type="image" src="directory.png" class="pictureButton">
+            </div>       
+    
+            <p class="subTitle" style="margin-top: 28px;">활동명</p>
+    
+            <textarea name="activityName" placeholder="활동명을 입력하세요." 
+            class="editBox" style="height: 56px;"></textarea>
+
+    
+        </div>
+        
+
+        <div style="position: absolute; right: 34px; margin-top: 66px">
+            <p class="subTitle">내용</p>
+
+            <textarea type="text" name="activityText" placeholder="활동에 대해 간단하게 소개해보세요." 
+            class="editBox" style="height: 123px;"></textarea>
+    
+            <p class="subTitle">태그</p>
+            <textarea type="text" name="activityTag" placeholder="태그를 입력하세요." 
+            class="editBox" style="height: 56px;"></textarea>
+    
+            <div>
+                <p class="subTitle" style="float: left;">질문</p>
+                <div style="float: right;">
+                    <input type="image" src="small_plus.png" class="plusButton">
+                    <input type="button" value="추가" class="addButton">
+                </div>                
+            </div>
+
+            <div class="question">
+                <p class="explanationText">질문을 선택해 응답을 통해<br>프로젝트에 대해 쉽게 소개할 수 있어요!</p>
+            </div>
+            
+
+            <div>
+                <p class="questionText">활동을 위해 필요한 능력은 무엇이라고 생각하나요?</p>
+                <div>
+                    <input type="image" src="small_close.png" class="smallButton">
+                </div>
+                <textarea placeholder="답변을 입력하세요."
+                class="answer"></textarea>
+            </div>
+        </div>         
+        
+        <div style="text-align: center;">  
+            <input type="button" value="취소" class="button" style="background-color: #f7f7f7;" />
+            <input type="button" value="다음" class="button" style="background-color: #d8d8d8;" />
+        </div> 
+    </body>
+
+</html>

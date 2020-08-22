@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="projectStyle.css">
+    </head>
+
+    <body>
+        <div>
+            <p class="title">프로젝트 추가</p>         
+        </div>
+        <div>        
+            <input type="image" src="close.png" class="closeButton">   
+        </div>
+
+        <hr class="line">
+
+
+        <div style="position: absolute; left: 34px; margin-top: 66px;">
+            <p class="subTitle">메인 이미지</p>
+
+            <div class="picture">
+                <input type="image" src="directory.png" class="pictureButton">
+            </div>       
+    
+            <p class="subTitle" style="margin-top: 28px;">제목</p>
+    
+            <textarea name="activityName" placeholder="프로젝트명을 입력하세요." 
+            class="editBox" style="height: 56px;"></textarea>
+
+    
+        </div>
+        
+
+        <div style="position: absolute; right: 34px; margin-top: 66px">
+            <p class="subTitle">개요</p>
+
+            <textarea type="text" name="activityText" placeholder="프로젝트에 대해 간단하게 소개해보세요." 
+            class="editBox" style="height: 123px;"></textarea>
+    
+            <p class="subTitle">태그</p>
+            <textarea type="text" name="activityTag" placeholder="태그를 입력하세요." 
+            class="editBox" style="height: 56px;"></textarea>
+    
+            <div>
+                <p class="subTitle">시작</p>
+                <div>
+                    <div class="selectbox" style="width: 130px; float: left; margin-bottom: 17px;">
+                        <label for="select_year">YY</label>
+                        <select name="year" id="select_year">
+                            <option selected value="none">YY</option>
+                            <option value="01">01</option>
+                            <option value="00">00</option>
+                            <option value="99">99</option>
+                            <option value="98">98</option>
+                            <option value="97">97</option>
+                        </select>
+                    </div>
+                    <div class="selectbox" style="margin-left: 17px; width: 68px; float: left;">
+                        <label for="select_month">MM</label>
+                        <select name="month" id="select_month">
+                            <option selected value="none">MM</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+
+                    <div class="selectbox" style="margin-left: 17px; width: 68px; float: left;">
+                        <label for="select_day">DD</label>
+                        <select name="day" id="select_day">
+                            <option selected value="none">DD</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="06">05</option>
+                        </select>
+                    </div>
+                </div>                
+            </div>
+
+            <div">
+                <p class="subTitle" style="clear: both; ">종료</p>
+                <div>
+                    <div class="selectbox" style="width: 130px; float: left;">
+                        <label for="select_year">YY</label>
+                        <select name="year" id="select_year">
+                            <option selected value="none">YY</option>
+                            <option value="01">01</option>
+                            <option value="00">00</option>
+                            <option value="99">99</option>
+                            <option value="98">98</option>
+                            <option value="97">97</option>
+                        </select>
+                    </div>
+                    <div class="selectbox" style="margin-left: 17px; width: 68px; float: left;">
+                        <label for="select_month">MM</label>
+                        <select name="month" id="select_month">
+                            <option selected value="none">MM</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+
+                    <div class="selectbox" style="margin-left: 17px; width: 68px; float: left;">
+                        <label for="select_day">DD</label>
+                        <select name="day" id="select_day">
+                            <option selected value="none">DD</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="06">05</option>
+                        </select>
+                    </div>
+                </div>                
+            </div>
+            
+
+        </div>         
+        
+        <div style="text-align: center;">  
+            <input type="button" value="취소" class="button" style="background-color: #f7f7f7;" />
+            <input type="button" value="저장" class="button" style="background-color: #d8d8d8;" />
+        </div> 
+    </body>
+
+</html>

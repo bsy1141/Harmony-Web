@@ -258,7 +258,6 @@
         -moz-appearance: none;
         appearance: none;
     }
-  
     
   div.edit{
     position: relative;
@@ -280,3 +279,4 @@
   div.inline{      
     display: inline-block;
   }
+  
