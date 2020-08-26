@@ -1,6 +1,6 @@
 body{
     width: 1440px;
-    height: 1024px;
+    height: 1505px;
 }
 .title {
     width: 554px;
@@ -8,14 +8,15 @@ body{
     position:absolute;
     top:274px;
     left:151px;
-    font-family: GmarketSansTTF;
+    font-family: Gmarket Sans;
     font-size: 54px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.39;
     letter-spacing: -1px;
-    color: #19191a;}
+    color: #19191a;
+}
 
 .subtitle {
     width: 456.2px;
@@ -30,7 +31,15 @@ body{
     font-style: normal;
     line-height: 1.44;
     letter-spacing: -0.5px;
-    color: #b3b3b3;}
+    color: #b3b3b3;
+}
+.harmony_logo{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:8px;
+    left:144px;
+}
 .download {
     width: 165px;
     height: 40px;
@@ -49,25 +58,15 @@ body{
     opacity: 0.6;
     border-radius: 5px;
     border: solid 1px #000000;
-}
-.btn1{
-    width: 91px;
-    height: 17px;
-    position:absolute;
-    top:0px;
-    left:18px;
+    background-color:#ffffff;
     opacity: 0.6;
-    font-family: Roboto;
-    font-size: 12px;
+    font-family:KoPubWorldDotum;;
+    font-size: 13px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     text-align: center;
     color: #000000;
 }
-.btn2{
+.btn{
     width: 65px;
     height: 19px;
     position:absolute;
@@ -99,7 +98,7 @@ body{
 }
 .Outside {
     width: 392px;
-    height: 738px;
+    height: 750px;
     position:absolute;
     top:286px;
     left:702px;
@@ -108,7 +107,7 @@ body{
     }
 .Inside {
     width: 388px;
-    height: 732px;
+    height: 740px;
     position:absolute;
     top:292px;
     left:704px;
@@ -116,13 +115,13 @@ body{
     border: solid 1px #cccccc;}
 .screen {
     width: 376px;
-    height: 720px;
+    height: 715px;
     position:absolute;
     top:304px;
     left:710px;
     border-radius: 32px;
     border: solid 1px #333333;
-    }
+}
 .phonebtn1 {
     width: 5px;
     height: 112px;
@@ -130,7 +129,8 @@ body{
     top:396px;
     left:698px;
     border-radius: 3px;
-    border: solid 1px #333333;}
+    border: solid 1px #333333;
+}
 .phonebtn2 {
     width: 5px;
     height: 56px;
@@ -147,3 +147,109 @@ body{
     left:1093px;
     border-radius: 3px;
     border: solid 1px #333333;}
+
+    .bottom{
+        width: 1440px;
+        height: 300px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+        background-color: #e1e1e1;
+        position: absolute;
+        top:1205px;
+        left:0px;
+    }
+    .bottom_hm_logo{
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        top:80px;
+        left:143px;
+    }
+    #detail{
+        width: 270px;
+        height: 75px;
+        opacity: 0.57;
+        font-family: KoPubWorldDotum;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 2.08;
+        letter-spacing: -0.33px;
+        color: #000000;
+    }
+    .detail1{
+        position: absolute;
+        top:176px;
+        left:153px;
+    }
+    .detail2{
+        position: absolute;;
+        top:176px;
+        left:425px;
+    }
+    .copyright{
+        width: 144px;
+        height: 42px;
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.5;
+        letter-spacing: -0.32px;
+        color: #818181;
+        position: absolute;
+        top:92px;
+        left:423px;
+    }
+    #policy{
+        width: 130px;
+        height: 26px;
+        opacity: 0.57;
+        font-family: KoPubWorldDotum;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.63;
+        letter-spacing: -0.44px;
+        color: #000000;
+        text-align:right;
+        border:0;
+        outline:0;
+        background-color: #e1e1e1;
+    }
+    .privacy_policy{
+        position: absolute;
+        top:141px;
+        left:1181px;
+    }
+    .use_policy{
+        position: absolute;
+        top:177px;
+        left:1181px;
+    }
+    #sns{
+        width: 30px;
+        height: 30px;
+        opacity: 0.43;
+        border-radius:15px;
+        background-color: #000000;
+        overflow:hidden;
+        border:0;
+        outline:0;
+    }
+    #logo{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+    .instagram{
+        position: absolute;
+        top:89px;
+        right:225px;
+    }
+    .twitter{
+        position: absolute;
+        top:89px;
+        right:180px;
+    }
+    .facebook{
+        position: absolute;
+        top:89px;
+        right:135px;
+    }
