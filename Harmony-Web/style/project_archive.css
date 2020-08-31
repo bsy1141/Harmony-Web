@@ -1,0 +1,86 @@
+@font-face{
+    font-family: "KoPubWorldDotumBold";
+    src: url(../assets/font/KoPubWorld\ Dotum\ Bold.ttf);
+}
+
+@font-face{
+    font-family: "KoPubWorldDotumMedium";
+    src: url(../assets/font/KoPubWorld\ Dotum\ Medium.ttf);
+}
+
+body{
+    background-color: rgba(216, 216, 216, 0.17);
+}
+
+.pa_project{
+    width: 321px;
+    height: 277px;
+    border-radius: 12px;
+    margin-top: 34px;
+    margin-left: 144px;
+    border: none;
+}
+
+.pa_project_name{
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    top: 150px;
+    left: 162px;
+    font-family: GmarketSans;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+
+.pa_project_date{
+    position: absolute;
+    width: 105px;
+    height: 17px;
+    top:205px;
+    left:169px;
+    font-family: KoPubWorldDotum;
+    font-size: 11px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.69px;
+    color: #ffffff;
+}
+
+.pa_btn{
+    position: absolute;
+    border: none;
+    background-color:transparent;  
+    border:0px transparent solid;
+    top: 185px;
+    left: 450px;
+}
+
+.pa_project_img{
+    width: 321px;
+    height: 277px;
+    margin-left: -5px;
+    border-radius: 12px;
+    border: none;
+}
+
+#pa_title{
+    width: 138px;
+    height: 31px;
+    margin-top: 71px;
+    margin-left: 144px;
+    font-family: KoPubWorldDotumBold;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.25px;
+    color: rgba(21, 21, 21, 0.87);
+}

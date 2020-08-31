@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>마이페이지 프로필 수정</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../../style/profile_edit.css">
+    </head>
+    <body>
+        <div id="pe_top"></div>
+        <img id="pe_profile_img" src="../../assets/image/profile_img.jpg">
+        <div id="pe_center">
+            <div id="pe_name">
+                <p>김유민</p>
+                <button type="button" onclick="slogan_edit()" id="btn_slogan" class="pe_edit_pen" style="position:absolute; top: 27px; left: 75px;"></button>
+            </div>
+            <p id="pe_slogan_output" class="pe_output_text" style="margin-left:0px; margin-top: 30px; position: absolute; left: 50%; transform: translate(-50%, 340%);">초기값</p>
+            <form id="pe_slogan">
+                <input type="text" id="pe_slogan_input" placeholder="한 줄 프로필을 입력하세요." autocomplete="off" style="visibility:hidden;"></input>
+                <button id="btn_slogan_reset" class="pe_button_small" type="reset" style="display:none; position:absolute; top:135px; left:40px; background-color: rgba(216, 216, 216, 0.26); outline-color: rgba(216, 216, 216, 0.26);">취소</button>
+                <button id="btn_slogan_submit" onclick="slogan_input()" class="pe_button_small" type="button" style="display:none; position:absolute; top:135px; left:100px; background-color: #d8d8d8; outline-color: #d8d8d8;">저장</button>
+            </form>   
+        </div>
+        <hr style="margin-top: -10px;">
+        <div class="pe_category">
+            <form class="pe_form">
+                <div>
+                    <p class="pe_category_title">소개</p>
+                    <button type="button" onclick="intro_edit()" id="btn_intro" class="pe_edit_pen" style="position: relative; top:-45px; left:550px"></button>
+                </div>
+                <pre style="white-space: pre-wrap; width: 548px; margin-top: -22px;" id="pe_intro_output" class="pe_output_text">초기값</pre>
+                <textarea id="pe_intro_input" style="visibility:hidden; margin-top: -22px;"></textarea>
+                <button id="btn_intro_reset" class="pe_button" type="reset" style="display:none; background-color: rgba(216, 216, 216, 0.26); margin-top: 25px; margin-left: 390px; margin-bottom: 19px; outline-color: rgba(216, 216, 216, 0.26);">취소</button>
+                <button id="btn_intro_submit" onclick="intro_input()" class="pe_button" type="button" style="display:none; background-color: #d8d8d8; margin-top: 25px; margin-left: 25px; margin-bottom: 19px; outline-color: #d8d8d8;">저장</button>
+            </form>
+        </div>
+        <div class="pe_category">
+            <form class="pe_form">
+                <div>
+                    <p class="pe_category_title">학력</p>
+                    <button type="button" onclick="school_edit()" id="btn_school" class="pe_edit_pen" style="position: relative; top:-45px; left:550px"></button>
+                </div>
+                <p name="nm_title" class="pe_title" style="display:none; margin-top: -22px;">기관명</p>
+                <div id="pe_div_output" style="margin-top: -40px;">
+                    <img id="pe_img_output" class="pe_school_img" src="../../assets/image/i_school_img.png">
+                    <p id="pe_school_output" class="pe_school_name">숙명여자대학교</p>
+                    <p id="pe_major_output" class="pe_school_info">마케팅 전공(학사)</p>
+                    <p id="pe_year_output" class="pe_school_info">2020년 ~ 2023년</p>
+                </div>
+                <input id="pe_school_input" class="pe_input" autocomplete="off" type="text" placeholder="학교, 연구실, 교육기관 등을 입력하세요."
+                            style="display:none; position: relative; width: 382px;">
+                <img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">
+                <div name="pe_div" style="display:none; float:left; width: 32%;">
+                    <p name="nm_title" class="pe_title">전공</p>
+                    <input id="pe_major_input" class="pe_input" type="text" placeholder="전공명을 입력하세요." autocomplete="off" style="width: 142px;">
+                </div>
+                <div name="pe_div" class="pe_parent" style="display:none;">
+                    <p name="nm_title" class="pe_title">학위</p>
+                    <select id="pe_degree_input" style="width: 204px; margin-left: 0px;">
+                        <option value="학사">학사</option>
+                        <option value="석사">석사</option>
+                        <option value="박사">박사</option>
+                    </select>
+                    <img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">
+                </div>   
+                <div name="pe_div" style="display:none; float:left; padding-right: 20px;"> 
+                    <p name="nm_title" class="pe_title">입학연도</p>
+                    <input id="pe_e_year_input" class="pe_input" type="year" placeholder="YYYY" autocomplete="off" style="width: 130px;">
+                    <img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="position: relative; top: 3px; left: -21px; width: 10px; height: 15px;">
+                </div>
+                <div name="pe_div" style="display:none;">
+                    <p name="nm_title" class="pe_title" style="padding-left: 175px;">졸업연도</p>
+                    <input id="pe_g_year_input" class="pe_input" type="year" placeholder="YYYY" autocomplete="off" style="width: 130px; margin-left:3px;">
+                    <img src="../../assets/image/arrow-right-black.png" style="position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">
+                </div>
+                <div name="pe_div" style="display:none; float:right; margin-right:17px; margin-top: -42px;">
+                    <button id="btn_school_add" class="pe_button" type="button" style="background-color: rgba(139, 139, 139, 0.15); width: 69px; height: 35px;">+ 추가</button>
+                </div>
+                <div name="pe_div" style="display:none; clear:both; margin-top: 30px;">
+                    <button id="btn_school_reset" class="pe_button" type="reset" style="background-color: rgba(216, 216, 216, 0.26); margin-top: 25px; margin-left: 390px; margin-bottom: 19px; outline-color: rgba(216, 216, 216, 0.26);">취소</button>
+                    <button id="btn_school_submit" onclick="school_input()" class="pe_button" type="button" style="background-color: #d8d8d8; margin-top: 25px; margin-left: 25px; margin-bottom: 19px; outline-color: #d8d8d8;">저장</button>
+                </div>
+            </form>
+        </div>
+        <div class="pe_category">
+            <form class="pe_form">
+                <div>
+                    <p class="pe_category_title">희망 직무</p>
+                    <button type="button" onclick="work_edit()" id="btn_school" class="pe_edit_pen" style="position: relative; top:-45px; left:550px"></button>
+                </div>
+                <p class="pe_title" style="margin-top: -22px;">1지망</p>
+                <div style="float:left; width: 42%;">
+                    <p class="pe_title">직군</p>
+                    <p id="pe_line1_output" class="pe_output_text">초기값</p>
+                    <input id="pe_line1" class="pe_input" type="text" name="pe_line" placeholder="마케팅" autocomplete="off" style="width: 208px; display:none;">
+                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <div class="pe_parent" style="margin-top: 27px;">
+                    <p class="pe_title">직무</p>
+                    <p id="pe_work1_output" class="pe_output_text">초기값</p>
+                    <input id="pe_work1" class="pe_input" type="text" name="pe_work" placeholder="디지털 마케팅" autocomplete="off" style="display:none; width: 208px; margin-left: 0px;">
+                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <p class="pe_title">2지망</p>
+                <div style="float:left; width: 42%;">
+                    <p class="pe_title">직군</p>
+                    <p id="pe_line2_output" class="pe_output_text" >초기값</p>
+                    <input id="pe_line2" class="pe_input" type="text" name="pe_line" placeholder="마케팅" autocomplete="off" style="display:none; width: 208px;">
+                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <div class="pe_parent" style="margin-top: 27px;">
+                    <p class="pe_title">직무</p>
+                    <p id="pe_work2_output" class="pe_output_text">초기값</p>
+                    <input id="pe_work2" class="pe_input" type="text" name="pe_work" placeholder="디지털 마케팅" autocomplete="off" style="display:none; width: 208px; margin-left: 0px;">
+                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <p class="pe_title">3지망</p>
+                <div style="float:left; width: 42%;">
+                    <p class="pe_title">직군</p>
+                    <p id="pe_line3_output" class="pe_output_text">초기값</p>
+                    <input id="pe_line3" class="pe_input" type="text" name="pe_line" placeholder="마케팅" autocomplete="off" style="display:none; width: 208px;">
+                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <div class="pe_parent" style="margin-top: 27px;">
+                    <p class="pe_title">직무</p>
+                    <p id="pe_work3_output" class="pe_output_text">초기값</p>
+                    <input id="pe_work3" class="pe_input" type="text" name="pe_work" placeholder="디지털 마케팅" autocomplete="off" style="display:none; width: 208px; margin-left: 0px;">
+                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <div id="pe_work_btns" style="display:none; clear:both; margin-top: 30px;">
+                    <button id="btn_work_reset" class="pe_button" type="reset" style="background-color: rgba(216, 216, 216, 0.26); margin-top: 25px; margin-left: 390px; margin-bottom: 19px; outline-color: rgba(216, 216, 216, 0.26);">취소</button>
+                    <button id="btn_work_submit" onclick="work_input()"  class="pe_button" type="button" style="background-color: #d8d8d8; margin-top: 25px; margin-left: 25px; margin-bottom: 19px; outline-color: #d8d8d8;">저장</button>
+                </div>
+            </form>
+        </div>
+        <div class="pe_category">
+            <form class="pe_form">
+                <div>
+                    <p class="pe_category_title">어학 능력</p>
+                    <button type="button" onclick="language_edit()" id="btn_language" class="pe_edit_pen" style="position: relative; top:-45px; left:550px"></button>
+                </div>
+                <div style="float:left; width: 42%; margin-top:-32px;">
+                    <p class="pe_title">언어</p>
+                    <p id="pe_lan_output" class="pe_output_text">초기값</p>
+                    <input id="pe_lan_input" class="pe_input" type="text" placeholder="영어" autocomplete="off" style="display:none; width: 208px;">
+                </div>
+                <div class="pe_parent" style="margin-top:-32px;">
+                    <p class="pe_title">숙련도</p>
+                    <p id="pe_level_output" class="pe_output_text">초기값</p>
+                    <select id="pe_level_input" style="display:none; width: 215px; margin-left: 0px;">
+                        <option value="초급">초급</option>
+                        <option value="중급">중급</option>
+                        <option value="고급">고급</option>
+                    </select>
+                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <div style="float:left; width: 42%;">
+                    <p class="pe_title">시험명</p>
+                    <p id="pe_lan_output" class="pe_output_text">초기값</p>
+                    <input id="pe_lan_input" class="pe_input" type="text" autocomplete="off" placeholder="토익" style="display:none; width: 208px;">
+                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <div class="pe_parent">
+                    <p class="pe_title">점수</p>
+                    <p id="pe_score_output" class="pe_output_text">초기값</p>
+                    <input id="pe_score_input" class="pe_input" type="text" autocomplete="off" placeholder="600"style="display:none; width: 208px; margin-left: 0px;">
+                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <div>
+                    <p class="pe_title">취득일</p>
+                    <p id="pe_lan_date_output" class="pe_output_text">초기값</p>
+                    <input id="pe_lan_date_input" class="pe_input" type="date" autocomplete="off" style="display:none; width: 210px;">
+                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <div style="float:right; margin-right:17px; margin-top: -42px;">
+                    <button id="btn_lan_add" class="pe_button" type="button" style="display:none; background-color: rgba(139, 139, 139, 0.15); width: 69px; height: 35px;">+ 추가</button>
+                </div>
+                <div id="pe_lan_btns" style="display:none; clear:both; margin-top: 30px;">
+                    <button id="btn_lan_reset" class="pe_button" type="reset" style="background-color: rgba(216, 216, 216, 0.26); margin-top: 25px; margin-left: 390px; margin-bottom: 19px; outline-color: rgba(216, 216, 216, 0.26);">취소</button>
+                    <button id="btn_lan_submit" onclick="language_input();" class="pe_button" type="button" style="background-color: #d8d8d8; margin-top: 25px; margin-left: 25px; margin-bottom: 19px; outline-color: #d8d8d8;">저장</button>
+                </div>
+                
+            </form>
+        </div>
+        <div class="pe_category"  style=" margin-bottom: 100px;">
+            <form class="pe_form">
+                <div>
+                    <p class="pe_category_title">자격증</p>
+                    <button type="button" onclick="license_edit()" id="btn_school" class="pe_edit_pen" style="position: relative; top:-45px; left:550px"></button>
+                </div>
+                <div style="margin-top:-32px;">
+                    <p class="pe_title">시험명</p>
+                    <p id="pe_license_output" class="pe_output_text">초기값</p>
+                    <input id="pe_license_input" class="pe_input" type="text" autocomplete="off" placeholder="시험명을 입력하세요."style="display:none; width: 439px;">
+                    <!--<img src="../../assets/image/arrow-right-black.png" style="position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <div>
+                    <p class="pe_title">취득일</p>
+                    <p id="pe_license_date_output" class="pe_output_text">초기값</p>
+                    <input id="pe_license_date_input" class="pe_input" type="date" style="display:none; width: 210px;">
+                    <!--<img src="../../assets/image/arrow-right-black.png" style="position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                </div>
+                <div style="float:right; margin-right:17px; margin-top: -42px;">
+                    <button id="btn_license_add" class="pe_button" type="button" style="display:none; background-color: rgba(139, 139, 139, 0.15); width: 69px; height: 35px;">+ 추가</button>
+                </div>
+                <div id="pe_license_btns" style="display:none; clear:both; margin-top: 30px;">
+                    <button id="btn_license_reset" class="pe_button" type="reset" style="background-color: rgba(216, 216, 216, 0.26); margin-top: 25px; margin-left: 390px; margin-bottom: 19px; outline-color: rgba(216, 216, 216, 0.26);">취소</button>
+                    <button id="btn_license_submit" onclick="license_input()" class="pe_button" type="botton" style="background-color: #d8d8d8; margin-top: 25px; margin-left: 25px; margin-bottom: 19px; outline-color: #d8d8d8;">저장</button>
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript">
+            function slogan_edit(){
+                document.getElementById("pe_slogan_output").style.visibility = "hidden";//출력태그 숨김
+                document.getElementById("pe_slogan_input").style.visibility = "visible";//입력폼 나타냄
+                document.getElementById("btn_slogan_reset").style.display = "block";//버튼 나타냄
+                document.getElementById("btn_slogan_submit").style.display = "block";
+            }
+
+            function slogan_input(){
+                var input = document.getElementById("pe_slogan_input").value; //입력값 읽어와서
+                document.getElementById("pe_slogan_output").innerHTML = input; //출력
+                document.getElementById("pe_slogan_output").style.visibility = "visible";//출력태그 보임
+                document.getElementById("pe_slogan_input").style.visibility = "hidden";//입력폼 숨김
+                document.getElementById("btn_slogan_reset").style.display = "none";//입력폼 숨김
+                document.getElementById("btn_slogan_submit").style.display = "none";//입력폼 숨김
+               
+            }
+
+            function intro_edit(){
+                document.getElementById("pe_intro_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_intro_input").style.visibility = "visible";//입력폼 나타냄
+                document.getElementById("btn_intro_reset").style.display = "inline";//버튼 나타냄
+                document.getElementById("btn_intro_submit").style.display = "inline";
+            }
+
+            function intro_input(){
+                var input = document.getElementById("pe_intro_input").value; //입력값 읽어와서
+                document.getElementById("pe_intro_output").innerHTML = input; //출력
+                document.getElementById("pe_intro_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_intro_input").style.visibility = "hidden";//입력폼 숨김
+                document.getElementById("btn_intro_reset").style.display = "none";//입력폼 숨김
+                document.getElementById("btn_intro_submit").style.display = "none";//입력폼 숨김
+            }
+
+            function school_edit(){
+                document.getElementById("pe_div_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_school_input").style.display = "inline";//입력폼 나타냄
+                document.getElementsByName("nm_title")[0].style.display = "block";
+                for(var i=0; i<7; i++){
+                    document.getElementsByName("pe_div")[i].style.display = "block";
+                }
+                for(var i=0; i<4; i++){ //타이틀 나타냄
+                    document.getElementsByName("nm_title")[i].style.display = "block";
+                }
+                for(var i=0; i<2; i++){ //화살표 나타냄
+                    document.getElementsByName("nm_arrow")[i].style.display = "block";
+                }
+            }
+
+            function school_input(){
+                var school_input = document.getElementById("pe_school_input").value; //입력값 읽어와서
+                var major_input = document.getElementById("pe_major_input").value; 
+                var degree_input = document.getElementById("pe_degree_input").value; 
+                var e_year_input = document.getElementById("pe_e_year_input").value;
+                var g_year_input = document.getElementById("pe_g_year_input").value; 
+
+                document.getElementById("pe_school_output").innerHTML = school_input ; //출력
+                document.getElementById("pe_major_output").innerHTML = major_input+"("+ degree_input  + ")"; //출력
+                document.getElementById("pe_year_output").innerHTML = e_year_input+"년 ~ "+g_year_input+"년" ; //출력
+                
+                document.getElementById("pe_school_input").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_div_output").style.display = "block";//출력태그 보임
+
+                document.getElementsByName("nm_title")[0].style.display = "none";
+                for(var i=0; i<7; i++){
+                    document.getElementsByName("pe_div")[i].style.display = "none";
+                }
+                for(var i=0; i<4; i++){ //타이틀 숨김
+                    document.getElementsByName("nm_title")[i].style.display = "none";
+                }
+                for(var i=0; i<2; i++){ //화살표 숨김
+                    document.getElementsByName("nm_arrow")[i].style.display = "none";
+                }
+            }
+
+            function work_edit(){
+                document.getElementById("pe_line1_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_line2_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_line3_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_work1_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_work2_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_work3_output").style.display = "none";//출력태그 숨김
+
+                document.getElementById("pe_line1").style.display = "block";//입력폼 
+                document.getElementById("pe_line2").style.display = "block";//입력폼 
+                document.getElementById("pe_line3").style.display = "block";//입력폼 
+                document.getElementById("pe_work1").style.display = "block";//입력폼 
+                document.getElementById("pe_work2").style.display = "block";//입력폼
+                document.getElementById("pe_work3").style.display = "block";//입력폼 
+
+                document.getElementById("pe_work_btns").style.display = "block";
+                
+            }
+
+            function work_input(){
+                var line1_input = document.getElementById("pe_line1").value; //입력값 읽어와서
+                var line2_input = document.getElementById("pe_line2").value;
+                var line3_input = document.getElementById("pe_line3").value;
+                var work1_input = document.getElementById("pe_work1").value;
+                var work2_input = document.getElementById("pe_work2").value;
+                var work3_input = document.getElementById("pe_work3").value;
+
+                document.getElementById("pe_line1_output").innerHTML = line1_input ; //출력
+                document.getElementById("pe_line2_output").innerHTML = line2_input ; //출력
+                document.getElementById("pe_line3_output").innerHTML = line3_input ; //출력
+                document.getElementById("pe_work1_output").innerHTML = work1_input ; //출력
+                document.getElementById("pe_work2_output").innerHTML = work2_input ; //출력
+                document.getElementById("pe_work3_output").innerHTML = work3_input ; //출력
+
+                document.getElementById("pe_line1_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_line2_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_line3_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_work1_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_work2_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_work3_output").style.display = "block";//출력태그 보임
+                
+                document.getElementById("pe_line1").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_line2").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_line3").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_work1").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_work2").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_work3").style.display = "none";//입력폼 숨김
+                
+                
+
+                document.getElementById("pe_work_btns").style.display = "none";
+            }
+
+            function language_edit(){
+                document.getElementById("pe_lan_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_level_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_lan_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_score_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_lan_date_output").style.display = "none";//출력태그 숨김
+
+                document.getElementById("pe_lan_input").style.display = "inline";//입력폼 
+                document.getElementById("pe_level_input").style.display = "inline";//입력폼 
+                document.getElementById("pe_lan_input").style.display = "inline";//입력폼 
+                document.getElementById("pe_score_input").style.display = "inline";//입력폼 
+                document.getElementById("pe_lan_date_input").style.display = "inline";//입력폼
+
+                document.getElementById("pe_lan_btns").style.display = "block";
+                document.getElementById("btn_lan_add").style.display = "block";
+                
+                
+            }
+
+            function language_input(){
+                var lan_input = document.getElementById("pe_lan_input").value; //입력값 읽어와서
+                var level_input = document.getElementById("pe_level_input").value;
+                var lan_input = document.getElementById("pe_lan_input").value;
+                var score_input = document.getElementById("pe_score_input").value;
+                var date_input = document.getElementById("pe_lan_date_input").value;
+
+                document.getElementById("pe_lan_output").innerHTML = lan_input ; //출력
+                document.getElementById("pe_level_output").innerHTML = level_input ; //출력
+                document.getElementById("pe_lan_output").innerHTML = lan_input ; //출력
+                document.getElementById("pe_score_output").innerHTML = score_input ; //출력
+                document.getElementById("pe_lan_date_output").innerHTML = date_input ; //출력
+             
+                document.getElementById("pe_lan_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_level_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_lan_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_score_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_lan_date_output").style.display = "block";//출력태그 보임
+                
+                document.getElementById("pe_lan_input").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_level_input").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_lan_input").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_score_input").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_lan_date_input").style.display = "none";//입력폼 숨김
+
+                document.getElementById("pe_lan_btns").style.display = "none";
+                document.getElementById("btn_lan_add").style.display = "none";
+            }
+
+            function license_edit(){
+                document.getElementById("pe_license_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_license_date_output").style.display = "none";//출력태그 숨김
+
+                document.getElementById("pe_license_input").style.display = "inline";//입력폼 
+                document.getElementById("pe_license_date_input").style.display = "inline";//입력폼 
+
+                document.getElementById("pe_license_btns").style.display = "block";
+                document.getElementById("btn_license_add").style.display = "block";
+                
+                
+            }
+
+            function license_input(){
+                var li_input = document.getElementById("pe_license_input").value; //입력값 읽어와서
+                var li_date_input = document.getElementById("pe_license_date_input").value;
+        
+                document.getElementById("pe_license_output").innerHTML = li_input ; //출력
+                document.getElementById("pe_license_date_output").innerHTML = li_date_input ; //출력
+             
+                document.getElementById("pe_license_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_license_date_output").style.display = "block";//출력태그 보임
+                
+                document.getElementById("pe_license_input").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_license_date_input").style.display = "none";//입력폼 숨김
+
+                document.getElementById("pe_license_btns").style.display = "none";
+                document.getElementById("btn_license_add").style.display = "none";
+            }
+        </script>
+    </body>
+</html>
