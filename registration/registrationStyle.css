@@ -1,5 +1,5 @@
 @font-face{
-    font-family: 'KoPubWorldDotum';
+    font-family: 'KoPubWorldDotum';    
     src: url(KoPubWorldDotumMedium.ttf);
 }
 
@@ -184,7 +184,7 @@
   .check input[type="checkbox"]:checked + label {
       width: 20px;
       height: 20px;
-      background: url(check_box.png);
+      background: url(../image/check_box.png);
       background-size:cover;
       border: solid 1px #404040;
       opacity: 1;
