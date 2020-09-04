@@ -7,7 +7,9 @@
     <H1 class="title">일상의 기록이<br/>포트폴리오가 되는 곳</H1>
     <P class="subtitle">청년과 기업을 이어주는 곳, 하모니에서 시작해보세요.</P>
     <img src="../assets/image/icon8.png" class="harmony_logo">
-    <button class="signup">로그인/회원가입</button>
+    
+    <button onclick="location.href='#popup'" class="login_signup">로그인/회원가입</a>
+
     <button class="download">
         <p class="btn">앱 다운로드</p>
         <img src="../assets/image/icon1.png" class="img1">
@@ -51,5 +53,28 @@
             <img src="../assets/image/fb.png" id="logo">
         </button>
     </div>
-</body> 
 
+    <div class="main_login" id="popup">
+        <a href="#a">
+            <img src="../assets/image/icon3.png" class="icon">
+        </a>
+        <input type="text" id="i" class="email" placeholder="   이메일"/>
+        <input type="text" id="i" class="password" placeholder="   비밀번호"/>
+
+        <button class="find">ID/PW 찾기</button>
+
+        <button id="b" class="login">로그인</button>
+        <button id="b" class="signup" onclick="location.href='signup1.html'">회원가입</button>
+
+        <div id="rectangle" class="r1"></div>
+        <div class="login2">다른 로그인 방법</div>
+        <div id="rectangle" class="r2"></div>
+
+        <div id="rectangle2" class="naver"></div>
+        <div id="rectangle2" class="kakao"></div>
+        <div id="rectangle2" class="google"></div>
+
+        <div class="notyet">아직 회원이 아니신가요?</div>
+        <button class="signup2" onclick="location.href='signup1.html'">회원가입</button>
+    </div>
+</body> 
