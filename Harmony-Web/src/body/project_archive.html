@@ -7,20 +7,86 @@
     </head>
     <body>
         <p id="pa_title">프로젝트 보관함</p>
-        <button type="button" id="" class="pa_project">
-            <img src="../../assets/image/pj_sample1.jpg" class="pa_project_img">
-            <p class="pa_project_name">롯데 U-프렌즈 10기</p>
-            <p class="pa_project_date">2020.10-2020.11</p>
-            <button id="btn_pjt_dropdown" onclick="showDropdown()" type="menu" class="pa_btn">
-                <div style="width: 4px; height: 4px; margin-bottom: 3px; border-radius: 50%; background-color: #ffffff;"></div> 
-                <div style="width: 4px; height: 4px; margin-bottom: 3px; border-radius:50%; background-color: #ffffff;"></div>
-                <div style="width: 4px; height: 4px; border-radius:50%; background-color: #ffffff;"></div>
-            </button>
-        </button>
+        <button style="float: right;" type="button" onclick="bookmark_add()">"북마크 추가(테스트용)"</button>
+        <table id="pa_table" border="0">
+            <tr id="pa_tr0">
+                <td id="pa_td0" class="pa_td"></td>
+                <td id="pa_td1" class="pa_td"></td>
+                <td id="pa_td2" class="pa_td"></td>
+            </tr>
+            <!--
+                <tr id="pa_tr0">
+                <td id="pa_td0" class="pa_td">
+                    <button type="button" id="" class="pa_project">
+                        <img src="../../assets/image/pj_sample1.jpg" class="pa_project_img">
+                        <p class="pa_project_name">롯데 U-프렌즈 10기</p>
+                        <p class="pa_project_date">2020.10-2020.11</p>
+                        <button id="btn_pjt_dropdown" onclick="showDropdown()" type="menu" class="pa_btn">
+                            <div style="width: 4px; height: 4px; margin-bottom: 3px; border-radius: 50%; background-color: #ffffff;"></div> 
+                            <div style="width: 4px; height: 4px; margin-bottom: 3px; border-radius:50%; background-color: #ffffff;"></div>
+                            <div style="width: 4px; height: 4px; border-radius:50%; background-color: #ffffff;"></div>
+                        </button>
+                    </button>
+                </td>
+            </tr>
+            -->
+            
+        </table>
 
         <script>
             function showDropdown(){
                 
+            }
+
+            pjt_cnt=0;
+
+            function bookmark_add(){
+                var t_table=document.getElementById("pa_table"); //table 객체 가져옴
+                var rowCount = t_table.rows.length;
+                var t_td = document.getElementById("pa_td"+pjt_cnt);
+
+                if(pjt_cnt==0||pjt_cnt%3==1||pjt_cnt%3==2){ //데이터가 아예 없거나 현재 행에 데이터가 한개/두개인 경우
+                    var btn_pjt = document.createElement("button");
+                    btn_pjt.setAttribute("class", "pa_project");
+                    var pjt_img = document.createElement("img");
+                    pjt_img.src = "../../assets/image/pj_sample1.jpg";
+                    pjt_img.setAttribute("class", "pa_project_img");
+
+                    btn_pjt.appendChild(pjt_img);
+                    t_td.appendChild(btn_pjt);
+
+                    if(pjt_cnt%3==2){
+                        var addedRow = t_table.insertRow(rowCount);
+                        addedRow.setAttribute("id", "pa_tr"+rowCount-1);
+                        var cell1 = addedRow.insertCell(0);
+                        var cell2 = addedRow.insertCell(1);
+                        var cell3 = addedRow.insertCell(2);
+
+                        var tmp1 = pjt_cnt+1;
+                        var tmp2 = pjt_cnt+2;
+                        var tmp3 = pjt_cnt+3;
+
+                        cell1.setAttribute("id", "pa_td"+tmp1); //셀 세개 추가하고 id부여
+                        cell2.setAttribute("id", "pa_td"+tmp2);
+                        cell3.setAttribute("id", "pa_td"+tmp3);
+                    }
+                    
+                }
+
+                else if(pjt_cnt%3==0){ //현재 행에 데이터가 세개 있으면(꽉 찼을 경우) -> 행 하나 추가 후 셀 추가 후 데이터 추가
+                    var btn_pjt = document.createElement("button");
+                    btn_pjt.setAttribute("class", "pa_project");
+                    var pjt_img = document.createElement("img");
+                    pjt_img.src = "../../assets/image/pj_sample1.jpg";
+                    pjt_img.setAttribute("class", "pa_project_img");
+
+                    btn_pjt.appendChild(pjt_img);
+                    t_td.appendChild(btn_pjt);   
+                }
+
+                pjt_cnt++;
+
+                   
             }
         </script>
     </body>

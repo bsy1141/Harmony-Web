@@ -12,12 +12,24 @@ body{
     background-color: rgba(216, 216, 216, 0.17);
 }
 
+table{
+    table-layout:fixed;
+    width: 1197px;
+    margin-left: 144px; 
+    border-spacing: 0xp;
+}
+
+td{
+    width: 321px;
+    height: 277px;
+}
+
 .pa_project{
     width: 321px;
     height: 277px;
     border-radius: 12px;
-    margin-top: 34px;
-    margin-left: 144px;
+   
+  
     border: none;
 }
 
