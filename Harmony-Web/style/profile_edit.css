@@ -157,6 +157,16 @@ body{
     clear:both;
 }
 
+.pe_level_inputc{
+    height: 46px;
+    margin-left: -5px;
+    border: solid 1px rgba(151, 151, 151, 0.35);;
+    border-radius: 4px;
+    outline: none;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
 #pe_top {
     width: 100%;
     height: 263px;
@@ -243,12 +253,3 @@ body{
     -webkit-appearance: none;
 }
 
-#pe_level_input{
-    height: 46px;
-    margin-left: -5px;
-    border: solid 1px rgba(151, 151, 151, 0.35);;
-    border-radius: 4px;
-    outline: none;
-    background: transparent;
-    -webkit-appearance: none;
-}

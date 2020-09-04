@@ -134,51 +134,53 @@
         </div>
         <div class="pe_category">
             <form class="pe_form">
-                <div>
-                    <p class="pe_category_title">어학 능력</p>
-                    <button type="button" onclick="language_edit()" id="btn_language" class="pe_edit_pen" style="position: relative; top:-45px; left:550px"></button>
-                </div>
-                <div style="float:left; width: 42%; margin-top:-32px;">
-                    <p class="pe_title">언어</p>
-                    <p id="pe_lan_output" class="pe_output_text">초기값</p>
-                    <input id="pe_lan_input" class="pe_input" type="text" placeholder="영어" autocomplete="off" style="display:none; width: 208px;">
-                </div>
-                <div class="pe_parent" style="margin-top:-32px;">
-                    <p class="pe_title">숙련도</p>
-                    <p id="pe_level_output" class="pe_output_text">초기값</p>
-                    <select id="pe_level_input" style="display:none; width: 215px; margin-left: 0px;">
-                        <option value="초급">초급</option>
-                        <option value="중급">중급</option>
-                        <option value="고급">고급</option>
-                    </select>
-                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
-                </div>
-                <div style="float:left; width: 42%;">
-                    <p class="pe_title">시험명</p>
-                    <p id="pe_lan_output" class="pe_output_text">초기값</p>
-                    <input id="pe_lan_input" class="pe_input" type="text" autocomplete="off" placeholder="토익" style="display:none; width: 208px;">
-                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
-                </div>
-                <div class="pe_parent">
-                    <p class="pe_title">점수</p>
-                    <p id="pe_score_output" class="pe_output_text">초기값</p>
-                    <input id="pe_score_input" class="pe_input" type="text" autocomplete="off" placeholder="600"style="display:none; width: 208px; margin-left: 0px;">
-                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
-                </div>
-                <div>
-                    <p class="pe_title">취득일</p>
-                    <p id="pe_lan_date_output" class="pe_output_text">초기값</p>
-                    <input id="pe_lan_date_input" class="pe_input" type="date" autocomplete="off" style="display:none; width: 210px;">
-                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
-                </div>
-                <div style="float:right; margin-right:17px; margin-top: -42px;">
-                    <button id="btn_lan_add" class="pe_button" type="button" style="display:none; background-color: rgba(139, 139, 139, 0.15); width: 69px; height: 35px;">+ 추가</button>
-                </div>
+                <div id="lan_Div0">
+                    <div>
+                        <p class="pe_category_title">어학 능력</p>
+                        <button type="button" onclick="language_edit()" id="btn_language" class="pe_edit_pen" style="position: relative; top:-45px; left:550px"></button>
+                    </div>
+                    <div style="float:left; width: 42%; margin-top:-32px;">
+                        <p class="pe_title">언어</p>
+                        <p id="pe_lan_output" class="pe_output_text">초기값</p>
+                        <input id="pe_lan_input" class="pe_input" type="text" placeholder="영어" autocomplete="off" style="display:none; width: 208px;">
+                    </div>
+                    <div class="pe_parent" style="margin-top:-32px;">
+                        <p class="pe_title">숙련도</p>
+                        <p id="pe_level_output" class="pe_output_text">초기값</p>
+                        <select id="pe_level_input" class="pe_level_inputc" style="display:none; width: 215px; margin-left: 0px;">
+                            <option value="초급">초급</option>
+                            <option value="중급">중급</option>
+                            <option value="고급">고급</option>
+                        </select>
+                        <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                    </div>
+                    <div style="float:left; width: 42%;">
+                        <p class="pe_title">시험명</p>
+                        <p id="pe_lan_name_output" class="pe_output_text">초기값</p>
+                        <input id="pe_lan_name_input" class="pe_input" type="text" autocomplete="off" placeholder="토익" style="display:none; width: 208px;">
+                        <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                    </div>
+                    <div class="pe_parent">
+                        <p class="pe_title">점수</p>
+                        <p id="pe_score_output" class="pe_output_text">초기값</p>
+                        <input id="pe_score_input" class="pe_input" type="text" autocomplete="off" placeholder="600"style="display:none; width: 208px; margin-left: 0px;">
+                        <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                    </div>
+                    <div>
+                        <p class="pe_title">취득일</p>
+                        <p id="pe_lan_date_output" class="pe_output_text">초기값</p>
+                        <input id="pe_lan_date_input" class="pe_input" type="date" autocomplete="off" style="display:none; width: 210px;">
+                        <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                    </div>
+                    <div style="float:right; margin-right:17px; margin-top: -42px;">
+                        <button id="btn_lan_add" onclick="language_add()" class="pe_button" type="button" style="display:none; background-color: rgba(139, 139, 139, 0.15); width: 69px; height: 35px;">+ 추가</button>
+                    </div>
+                    <div id="addedLanDiv"></div>
+                 </div>
                 <div id="pe_lan_btns" style="display:none; clear:both; margin-top: 30px;">
                     <button id="btn_lan_reset" class="pe_button" type="reset" style="background-color: rgba(216, 216, 216, 0.26); margin-top: 25px; margin-left: 390px; margin-bottom: 19px; outline-color: rgba(216, 216, 216, 0.26);">취소</button>
                     <button id="btn_lan_submit" onclick="language_input();" class="pe_button" type="button" style="background-color: #d8d8d8; margin-top: 25px; margin-left: 25px; margin-bottom: 19px; outline-color: #d8d8d8;">저장</button>
                 </div>
-                
             </form>
         </div>
         <div class="pe_category"  style=" margin-bottom: 100px;">
@@ -339,13 +341,13 @@
             function language_edit(){
                 document.getElementById("pe_lan_output").style.display = "none";//출력태그 숨김
                 document.getElementById("pe_level_output").style.display = "none";//출력태그 숨김
-                document.getElementById("pe_lan_output").style.display = "none";//출력태그 숨김
                 document.getElementById("pe_score_output").style.display = "none";//출력태그 숨김
+                document.getElementById("pe_lan_name_output").style.display = "none";//출력태그 숨김
                 document.getElementById("pe_lan_date_output").style.display = "none";//출력태그 숨김
 
                 document.getElementById("pe_lan_input").style.display = "inline";//입력폼 
                 document.getElementById("pe_level_input").style.display = "inline";//입력폼 
-                document.getElementById("pe_lan_input").style.display = "inline";//입력폼 
+                document.getElementById("pe_lan_name_input").style.display = "inline";//입력폼 
                 document.getElementById("pe_score_input").style.display = "inline";//입력폼 
                 document.getElementById("pe_lan_date_input").style.display = "inline";//입력폼
 
@@ -358,30 +360,197 @@
             function language_input(){
                 var lan_input = document.getElementById("pe_lan_input").value; //입력값 읽어와서
                 var level_input = document.getElementById("pe_level_input").value;
-                var lan_input = document.getElementById("pe_lan_input").value;
+                var lan_name_input = document.getElementById("pe_lan_name_input").value;
                 var score_input = document.getElementById("pe_score_input").value;
                 var date_input = document.getElementById("pe_lan_date_input").value;
 
                 document.getElementById("pe_lan_output").innerHTML = lan_input ; //출력
                 document.getElementById("pe_level_output").innerHTML = level_input ; //출력
-                document.getElementById("pe_lan_output").innerHTML = lan_input ; //출력
+                document.getElementById("pe_lan_name_output").innerHTML = lan_name_input ; //출력
                 document.getElementById("pe_score_output").innerHTML = score_input ; //출력
                 document.getElementById("pe_lan_date_output").innerHTML = date_input ; //출력
              
                 document.getElementById("pe_lan_output").style.display = "block";//출력태그 보임
                 document.getElementById("pe_level_output").style.display = "block";//출력태그 보임
-                document.getElementById("pe_lan_output").style.display = "block";//출력태그 보임
+                document.getElementById("pe_lan_name_output").style.display = "block";//출력태그 보임
                 document.getElementById("pe_score_output").style.display = "block";//출력태그 보임
                 document.getElementById("pe_lan_date_output").style.display = "block";//출력태그 보임
                 
                 document.getElementById("pe_lan_input").style.display = "none";//입력폼 숨김
                 document.getElementById("pe_level_input").style.display = "none";//입력폼 숨김
-                document.getElementById("pe_lan_input").style.display = "none";//입력폼 숨김
+                document.getElementById("pe_lan_name_input").style.display = "none";//입력폼 숨김
                 document.getElementById("pe_score_input").style.display = "none";//입력폼 숨김
                 document.getElementById("pe_lan_date_input").style.display = "none";//입력폼 숨김
 
                 document.getElementById("pe_lan_btns").style.display = "none";
                 document.getElementById("btn_lan_add").style.display = "none";
+            }
+
+            var lan_count=1;
+
+            function language_add(){
+                var addedFormDiv=document.getElementById("addedLanDiv");
+                var addedDiv = document.createElement("div"); //전체 div 생성
+                addedDiv.setAttribute("id", "lan_Div"+lan_count); //div의 id 카운팅
+                
+                /*언어*/
+                var lan_div1 = document.createElement("div"); //언어 div
+                lan_div1.style.float="left";
+                lan_div1.style.width="42%";
+                lan_div1.style.marginTop="-10px";
+
+                var lan_title1 = document.createElement("p"); //언어 타이틀
+                lan_title1.setAttribute("class", "pe_title");
+                var lan_txt1 = document.createTextNode("언어");
+                lan_title1.appendChild(lan_txt1);
+
+                var lan_out = document.createElement("p"); //p태그 생성(선택한 언어 출력하는 부분)
+                lan_out.setAttribute("id", "pe_lan_output"+lan_count); //p태그 id 카운팅
+                lan_out.setAttribute("class", "pe_output_text"); //p태그에 class 연결
+                lan_out.style.display="none";
+                
+                var lan_in = document.createElement("input"); //언어 입력폼
+                lan_in.setAttribute("id", "pe_lan_input"+lan_count);
+                lan_in.setAttribute("class","pe_input");
+                lan_in.type="text";
+                lan_in.placeholder="영어";
+                lan_in.autocomplete="off";
+                //lan_in.style.display="none";
+                lan_in.style.width="208px";
+
+                /*숙련도*/
+                var lan_div2 = document.createElement("div"); //숙련도 div
+                lan_div2.setAttribute("class", "pe_parent");
+                //lan_div1.style.marginTop="-32px";
+
+                var lan_title2 = document.createElement("p"); //숙련도 타이틀
+                lan_title2.setAttribute("class", "pe_title");
+                var lan_txt2 = document.createTextNode("숙련도");
+                lan_title2.appendChild(lan_txt2);
+
+                var level_out = document.createElement("p")
+                level_out.setAttribute("id", "pe_level_output"+lan_count);
+                level_out.setAttribute("class", "pe_output_text");
+                level_out.style.display="none";
+                
+                var level_in = document.createElement("select");
+                var level_opt1 = document.createElement("option");
+                var level_opt2 = document.createElement("option");
+                var level_opt3 = document.createElement("option");
+
+                level_in.setAttribute("id", "pe_level_input"+lan_count);
+                level_in.setAttribute("class", "pe_level_inputc");
+                //level_in.style.display="none";
+                level_in.style.width="215px";
+                level_in.style.marginLeft="0px";
+
+                level_opt1.text="초급";
+                level_opt2.text="중급";
+                level_opt3.text="고급";
+
+                level_in.options.add(level_opt1);
+                level_in.options.add(level_opt2);
+                level_in.options.add(level_opt3);
+                
+                /*시험명*/
+                var lan_div3 = document.createElement("div"); //시험명 div
+                lan_div3.style.float="left";
+                lan_div3.style.width="42%";
+                //lan_div1.style.marginTop="-32px";
+
+                var lan_title3 = document.createElement("p"); //시험명 타이틀
+                lan_title3.setAttribute("class", "pe_title");
+                var lan_txt3 = document.createTextNode("시험명");
+                lan_title3.appendChild(lan_txt3);
+
+                var lan_name_out = document.createElement("p"); //p태그 생성
+                lan_name_out.setAttribute("id", "pe_lan_name_output"+lan_count); //p태그 id 카운팅
+                lan_name_out.setAttribute("class", "pe_output_text"); //p태그에 class 연결
+                lan_name_out.style.display="none";
+                
+                var lan_name_in = document.createElement("input"); //언어 입력폼
+                lan_name_in.setAttribute("id", "pe_name_lan_input"+lan_count);
+                lan_name_in.setAttribute("class","pe_input");
+                lan_name_in.type="text";
+                lan_name_in.placeholder="토익";
+                lan_name_in.autocomplete="off";
+                //lan_in.style.display="none";
+                lan_name_in.style.width="208px";
+
+                /*점수*/
+                var lan_div4 = document.createElement("div"); //점수 div
+                lan_div4.setAttribute("class", "pe_parent");
+
+                var lan_title4 = document.createElement("p"); //점수 타이틀
+                lan_title4.setAttribute("class", "pe_title");
+                var lan_txt4 = document.createTextNode("점수");
+                lan_title4.appendChild(lan_txt4);
+
+                var score_out = document.createElement("p"); //p태그 생성
+                score_out.setAttribute("id", "pe_score_output"+lan_count); //p태그 id 카운팅
+                score_out.setAttribute("class", "pe_output_text"); //p태그에 class 연결
+                score_out.style.display="none";
+                
+                var score_in = document.createElement("input"); //점수 입력폼
+                score_in.setAttribute("id", "pe_score_input"+lan_count);
+                score_in.setAttribute("class","pe_input");
+                score_in.type="text";
+                score_in.placeholder="600";
+                score_in.autocomplete="off";
+                score_in.style.marginLeft="-2px";
+                //lan_in.style.display="none";
+                score_in.style.width="208px";
+
+                /*취득일*/
+                var lan_div5 = document.createElement("div"); //취득일 div
+
+                var lan_title5 = document.createElement("p"); //취득일 타이틀
+                lan_title5.setAttribute("class", "pe_title");
+                var lan_txt5 = document.createTextNode("취득일");
+                lan_title5.appendChild(lan_txt5);
+
+                var date_out = document.createElement("p"); //p태그 생성
+                date_out.setAttribute("id", "pe_date_output"+lan_count); //p태그 id 카운팅
+                date_out.setAttribute("class", "pe_output_text"); //p태그에 class 연결
+                date_out.style.display="none";
+                
+                var date_in = document.createElement("input"); //취득일 입력폼
+                date_in.setAttribute("id", "pe_date_input"+lan_count);
+                date_in.setAttribute("class","pe_input");
+                date_in.type="date";
+                //lan_in.style.display="none";
+                score_in.style.width="210px";
+
+                lan_div1.appendChild(lan_title1);
+                lan_div1.appendChild(lan_out);
+                lan_div1.appendChild(lan_in);
+
+                lan_div2.appendChild(lan_title2);
+                lan_div2.appendChild(level_out);
+                lan_div2.appendChild(level_in);
+
+                lan_div3.appendChild(lan_title3);
+                lan_div3.appendChild(lan_name_out);
+                lan_div3.appendChild(lan_name_in);
+
+                lan_div4.appendChild(lan_title4);
+                lan_div4.appendChild(score_out);
+                lan_div4.appendChild(score_in);
+
+                lan_div5.appendChild(lan_title5);
+                lan_div5.appendChild(date_out);
+                lan_div5.appendChild(date_in);
+                
+                addedDiv.appendChild(lan_div1);
+                addedDiv.appendChild(lan_div2);
+                addedDiv.appendChild(lan_div3);
+                addedDiv.appendChild(lan_div4);
+                addedDiv.appendChild(lan_div5);
+                
+                //addedDiv.innerHTML = str;
+                addedFormDiv.appendChild(addedDiv);
+                
+                lan_count++;
             }
 
             function license_edit(){
@@ -393,8 +562,6 @@
 
                 document.getElementById("pe_license_btns").style.display = "block";
                 document.getElementById("btn_license_add").style.display = "block";
-                
-                
             }
 
             function license_input(){
