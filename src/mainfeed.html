@@ -2,16 +2,20 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../style/mainfeed.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
     <div class="top">
         <button class="harmony">
             <img src="../assets/image/icon8.png" class="harmony_logo">
         </button>
-        <input type="text" class="find" placeholder="     검색">
-        <button class="findbtn">
-            <img src="../assets/image/icon10.png" class="findbtnimg">
-        </button>
+
+        <form method="post" action="search.php">
+            <input type="text" class="find" name="find" placeholder="     검색">
+            <button type="submit" class="findbtn">
+                <img src="../assets/image/icon10.png" class="findbtnimg">
+            </button>
+        </form>
         <button id="btn" class="write_post">게시글 작성</button>
         <button id="btn" class="mypage">마이페이지</button>
         <button id="btn" class="bookmark">북마크</button>
@@ -23,7 +27,7 @@
         </div>
         <div class="prof_name">김유민</div>
     </div>
-    
+
     <div class="post">
         <div class="photo"></div>
         
@@ -55,7 +59,21 @@
             <input type="text" class="write_comment" placeholder="  새 댓글을 입력하세요.">
             <button class="enroll">등록</button>
         </div>
-
-        
     </div>
+    
+    <div class="alarm_page" style="display:none"></div>
+
+    <script>
+        $(function(){
+            $(".alarm").click(function(e){
+                e.stopPropagation();
+                $(".alarm_page").show();
+            });
+
+            $(document).click(function() {
+                $(".alarm_page").hide();
+            }) 
+        });
+
+    </script>
 </body>
