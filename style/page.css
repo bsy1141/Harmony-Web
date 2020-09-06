@@ -413,3 +413,16 @@ body{
     top:94.9px;
     left:66px;
 }
+
+
+.alarm_page{
+    width: 360px;
+    height: 319px;
+    border-radius: 3px;
+    border: solid 0.5px rgba(151, 151, 151, 0.19);
+    background-color: #ffffff;
+    position: absolute;
+    top:82px;
+    left:795px;
+    display:flex;
+}
