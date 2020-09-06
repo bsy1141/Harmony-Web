@@ -11,7 +11,6 @@ body{
     position:absolute;
     top:0px;
     left:0px;
-    box-shadow: none;
 }
 .find{
     width: 622px;
@@ -343,4 +342,16 @@ body{
     border:0;
     outline:0;
     background-color:#ffffff;
+}
+
+.alarm_page{
+    width: 360px;
+    height: 319px;
+    border-radius: 3px;
+    border: solid 0.5px rgba(151, 151, 151, 0.19);
+    background-color: #ffffff;
+    position: absolute;
+    top:82px;
+    left:795px;
+    display:flex;
 }
