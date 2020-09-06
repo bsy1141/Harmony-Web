@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../style/page.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
     <div class="top">
@@ -66,4 +67,20 @@
             <div id="job" class="second_job">출판 기획자</div>
         </div>
     </div>
+
+    <div class="alarm_page" style="display:none"></div>
+
+    <script>
+        $(function(){
+            $(".alarm").click(function(e){
+                e.stopPropagation();
+                $(".alarm_page").show();
+            });
+
+            $(document).click(function() {
+                $(".alarm_page").hide();
+            }) 
+        });
+
+    </script>
 </body>
