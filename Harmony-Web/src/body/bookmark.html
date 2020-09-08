@@ -13,11 +13,66 @@
             <p id="pe_pf_message">유연한 사고를 가진 마케터, 김유민입니다!</p>
         </div>
         <hr style="width: 1300px;opacity: 0.17">
+        <button style="float: right;" type="button" onclick="bookmark_add()">"북마크 추가(테스트용)"</button>
         <p class="bookmark_title">북마크</p>
-        <table>
-            <tr>
-                <td></td>
+        <table id="bm_table" border="0">
+            <tr id="bm_tr0">
+                <td id="bm_td0" class="bm_td"></td>
+                <td id="bm_td1" class="bm_td"></td>
+                <td id="bm_td2" class="bm_td"></td>
             </tr>
         </table>
+
+        <script>
+            bm_cnt=0;
+
+            function bookmark_add(){
+                var t_table=document.getElementById("bm_table"); //table 객체 가져옴
+                var rowCount = t_table.rows.length;
+                var t_td = document.getElementById("bm_td"+bm_cnt);
+
+                if(bm_cnt==0||bm_cnt%3==1||bm_cnt%3==2){ //데이터가 아예 없거나 현재 행에 데이터가 한개/두개인 경우
+                    var btn_bm = document.createElement("button");
+                    btn_bm.setAttribute("class", "bookmark");
+                    var bm_img = document.createElement("img");
+                    bm_img.src = "../../assets/image/pj_sample1.jpg";
+                    bm_img.setAttribute("class", "bookmark_img");
+
+                    btn_bm.appendChild(bm_img);
+                    t_td.appendChild(btn_bm);
+
+                    if(bm_cnt%3==2){
+                        var addedRow = t_table.insertRow(rowCount);
+                        addedRow.setAttribute("id", "pa_tr"+rowCount-1);
+                        var cell1 = addedRow.insertCell(0);
+                        var cell2 = addedRow.insertCell(1);
+                        var cell3 = addedRow.insertCell(2);
+
+                        var tmp1 = bm_cnt+1;
+                        var tmp2 = bm_cnt+2;
+                        var tmp3 = bm_cnt+3;
+
+                        cell1.setAttribute("id", "bm_td"+tmp1); //셀 세개 추가하고 id부여
+                        cell2.setAttribute("id", "bm_td"+tmp2);
+                        cell3.setAttribute("id", "bm_td"+tmp3);
+                    }
+                    
+                }
+
+                else if(bm_cnt%3==0){ //현재 행에 데이터가 세개 있으면(꽉 찼을 경우) -> 행 하나 추가 후 셀 추가 후 데이터 추가
+                    var btn_bm = document.createElement("button");
+                    btn_bm.setAttribute("class", "pa_project");
+                    var bm_img = document.createElement("img");
+                    bm_img.src = "../../assets/image/pj_sample1.jpg";
+                    bm_img.setAttribute("class", "bookmark_img");
+
+                    btn_bm.appendChild(bm_img);
+                    t_td.appendChild(btn_bm);   
+                }
+
+                bm_cnt++;                   
+            }
+        </script>
+
     </body>
 </html>

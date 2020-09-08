@@ -12,6 +12,33 @@ body{
     background-color: rgba(216, 216, 216, 0.17);
 }
 
+table{
+    table-layout:fixed;
+    width: 1197px;
+    margin-left: 144px; 
+    border-spacing: 0xp;
+}
+
+td{
+    width: 321px;
+    height: 277px;
+}
+
+.bookmark{
+    width: 321px;
+    height: 277px;
+    border-radius: 12px;
+    border: none;
+}
+
+.bookmark_img{
+    width: 321px;
+    height: 277px;
+    margin-left: -5px;
+    border-radius: 12px;
+    border: none;
+}
+
 .pe_edit_pen{
     width: 15px;
     height: 19px;

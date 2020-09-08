@@ -7,7 +7,7 @@
     </head>
     <body>
         <p id="pa_title">프로젝트 보관함</p>
-        <button style="float: right;" type="button" onclick="bookmark_add()">"북마크 추가(테스트용)"</button>
+        <button style="float: right;" type="button" onclick="project_add()">"프로젝트 추가(테스트용)"</button>
         <table id="pa_table" border="0">
             <tr id="pa_tr0">
                 <td id="pa_td0" class="pa_td"></td>
@@ -40,7 +40,7 @@
 
             pjt_cnt=0;
 
-            function bookmark_add(){
+            function project_add(){
                 var t_table=document.getElementById("pa_table"); //table 객체 가져옴
                 var rowCount = t_table.rows.length;
                 var t_td = document.getElementById("pa_td"+pjt_cnt);

@@ -37,49 +37,52 @@
         </div>
         <div class="pe_category">
             <form class="pe_form">
-                <div>
-                    <p class="pe_category_title">학력</p>
-                    <button type="button" onclick="school_edit()" id="btn_school" class="pe_edit_pen" style="position: relative; top:-45px; left:550px"></button>
-                </div>
-                <p name="nm_title" class="pe_title" style="display:none; margin-top: -22px;">기관명</p>
-                <div id="pe_div_output" style="margin-top: -40px;">
-                    <img id="pe_img_output" class="pe_school_img" src="../../assets/image/i_school_img.png">
-                    <p id="pe_school_output" class="pe_school_name">숙명여자대학교</p>
-                    <p id="pe_major_output" class="pe_school_info">마케팅 전공(학사)</p>
-                    <p id="pe_year_output" class="pe_school_info">2020년 ~ 2023년</p>
-                </div>
-                <input id="pe_school_input" class="pe_input" autocomplete="off" type="text" placeholder="학교, 연구실, 교육기관 등을 입력하세요."
-                            style="display:none; position: relative; width: 382px;">
-                <img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">
-                <div name="pe_div" style="display:none; float:left; width: 32%;">
-                    <p name="nm_title" class="pe_title">전공</p>
-                    <input id="pe_major_input" class="pe_input" type="text" placeholder="전공명을 입력하세요." autocomplete="off" style="width: 142px;">
-                </div>
-                <div name="pe_div" class="pe_parent" style="display:none;">
-                    <p name="nm_title" class="pe_title">학위</p>
-                    <select id="pe_degree_input" style="width: 204px; margin-left: 0px;">
-                        <option value="학사">학사</option>
-                        <option value="석사">석사</option>
-                        <option value="박사">박사</option>
-                    </select>
-                    <img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">
-                </div>   
-                <div name="pe_div" style="display:none; float:left; padding-right: 20px;"> 
-                    <p name="nm_title" class="pe_title">입학연도</p>
-                    <input id="pe_e_year_input" class="pe_input" type="year" placeholder="YYYY" autocomplete="off" style="width: 130px;">
-                    <img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="position: relative; top: 3px; left: -21px; width: 10px; height: 15px;">
-                </div>
-                <div name="pe_div" style="display:none;">
-                    <p name="nm_title" class="pe_title" style="padding-left: 175px;">졸업연도</p>
-                    <input id="pe_g_year_input" class="pe_input" type="year" placeholder="YYYY" autocomplete="off" style="width: 130px; margin-left:3px;">
-                    <img src="../../assets/image/arrow-right-black.png" style="position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">
-                </div>
-                <div name="pe_div" style="display:none; float:right; margin-right:17px; margin-top: -42px;">
-                    <button id="btn_school_add" class="pe_button" type="button" style="background-color: rgba(139, 139, 139, 0.15); width: 69px; height: 35px;">+ 추가</button>
-                </div>
-                <div name="pe_div" style="display:none; clear:both; margin-top: 30px;">
-                    <button id="btn_school_reset" class="pe_button" type="reset" style="background-color: rgba(216, 216, 216, 0.26); margin-top: 25px; margin-left: 390px; margin-bottom: 19px; outline-color: rgba(216, 216, 216, 0.26);">취소</button>
-                    <button id="btn_school_submit" onclick="school_input()" class="pe_button" type="button" style="background-color: #d8d8d8; margin-top: 25px; margin-left: 25px; margin-bottom: 19px; outline-color: #d8d8d8;">저장</button>
+                <div id="school_Div0">
+                    <div>
+                        <p class="pe_category_title">학력</p>
+                        <button type="button" onclick="school_edit()" id="btn_school" class="pe_edit_pen" style="position: relative; top:-45px; left:550px"></button>
+                    </div>
+                    <p name="school_title" class="pe_title" style="display:none; margin-top: -22px;">기관명</p>
+                    <div id="pe_div_output0" style="margin-top: -40px;">
+                        <img id="pe_img_output0" class="pe_school_img" src="../../assets/image/i_school_img.png">
+                        <p id="pe_school_output0" class="pe_school_name">숙명여자대학교</p>
+                        <p id="pe_major_output0" class="pe_school_info">마케팅 전공(학사)</p>
+                        <p id="pe_year_output0" class="pe_school_info">2020년 ~ 2023년</p>
+                    </div>
+                    <input id="pe_school_input0" class="pe_input" autocomplete="off" type="text" placeholder="학교, 연구실, 교육기관 등을 입력하세요."
+                                style="display:none; position: relative; width: 382px;">
+                    <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                    <div name="pe_div" style="float:left; width: 32%;">
+                        <p name="school_title" class="pe_title" style="display:none;">전공</p>
+                        <input id="pe_major_input0" class="pe_input" type="text" placeholder="전공명을 입력하세요." autocomplete="off" style="display:none; width: 142px;">
+                    </div>
+                    <div name="pe_div" class="pe_parent">
+                        <p name="school_title" class="pe_title" style="display:none;">학위</p>
+                        <select id="pe_degree_input0" class="pe_level_inputc" style="display:none; width: 204px; margin-left: 0px;">
+                            <option value="학사">학사</option>
+                            <option value="석사">석사</option>
+                            <option value="박사">박사</option>
+                        </select>
+                        <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                    </div>   
+                    <div name="pe_div" style="float:left; padding-right: 20px;"> 
+                        <p name="school_title" class="pe_title" style="display:none;">입학연도</p>
+                        <input id="pe_e_year_input0" class="pe_input" type="year" placeholder="YYYY" autocomplete="off" style="display:none; width: 130px;">
+                        <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                    </div>
+                    <div name="pe_div">
+                        <p name="school_title" class="pe_title" style="display:none; padding-left: 175px;">졸업연도</p>
+                        <input id="pe_g_year_input0" class="pe_input" type="year" placeholder="YYYY" autocomplete="off" style="display:none; width: 130px; margin-left:20px;">
+                        <!--<img name="nm_arrow" src="../../assets/image/arrow-right-black.png" style="display:none; position: relative; top: 3px; left: -20px; width: 10px; height: 15px;">-->
+                    </div>
+                    <div name="pe_div" style="float:right; margin-right:17px; margin-top: -42px;">
+                        <button id="btn_school_add0" onclick="school_add()" class="pe_button" type="button" style="display:none; background-color: rgba(139, 139, 139, 0.15); width: 69px; height: 35px;">+ 추가</button>
+                    </div>
+                    <div id="addedSchoolDiv"></div>
+                    <div id="pe_school_btns" style="display:none; clear:both; margin-top: 30px;">
+                        <button id="btn_school_reset" class="pe_button" type="reset" style="background-color: rgba(216, 216, 216, 0.26); margin-top: 25px; margin-left: 390px; margin-bottom: 19px; outline-color: rgba(216, 216, 216, 0.26);">취소</button>
+                        <button id="btn_school_submit" onclick="school_input()" class="pe_button" type="button" style="background-color: #d8d8d8; margin-top: 25px; margin-left: 25px; margin-bottom: 19px; outline-color: #d8d8d8;">저장</button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -247,45 +250,247 @@
                 document.getElementById("btn_intro_submit").style.display = "none";//입력폼 숨김
             }
 
+            var school_count = 0;
+
             function school_edit(){
-                document.getElementById("pe_div_output").style.display = "none";//출력태그 숨김
-                document.getElementById("pe_school_input").style.display = "inline";//입력폼 나타냄
-                document.getElementsByName("nm_title")[0].style.display = "block";
-                for(var i=0; i<7; i++){
-                    document.getElementsByName("pe_div")[i].style.display = "block";
+                for(var i=0;i<=school_count;i++){
+                    document.getElementById("pe_div_output"+i).style.display = "none";//출력태그 숨김
+                    
+                    document.getElementById("pe_school_input"+i).style.display = "inline";//입력폼 
+                    document.getElementById("pe_major_input"+i).style.display = "inline";//입력폼
+                    document.getElementById("pe_degree_input"+i).style.display = "inline";//입력폼
+                    document.getElementById("pe_e_year_input"+i).style.display = "inline";//입력폼 
+                    document.getElementById("pe_g_year_input"+i).style.display = "inline";//입력폼 
+
+                    document.getElementById("btn_school_add"+i).style.display = "block";
                 }
-                for(var i=0; i<4; i++){ //타이틀 나타냄
-                    document.getElementsByName("nm_title")[i].style.display = "block";
+                for (var j=0; j<5; j++) {
+                    document.getElementsByName("school_title")[j].style.display = "block";
                 }
-                for(var i=0; i<2; i++){ //화살표 나타냄
-                    document.getElementsByName("nm_arrow")[i].style.display = "block";
-                }
+                
+                document.getElementById("pe_school_btns").style.display = "block";
             }
 
             function school_input(){
-                var school_input = document.getElementById("pe_school_input").value; //입력값 읽어와서
-                var major_input = document.getElementById("pe_major_input").value; 
-                var degree_input = document.getElementById("pe_degree_input").value; 
-                var e_year_input = document.getElementById("pe_e_year_input").value;
-                var g_year_input = document.getElementById("pe_g_year_input").value; 
-
-                document.getElementById("pe_school_output").innerHTML = school_input ; //출력
-                document.getElementById("pe_major_output").innerHTML = major_input+"("+ degree_input  + ")"; //출력
-                document.getElementById("pe_year_output").innerHTML = e_year_input+"년 ~ "+g_year_input+"년" ; //출력
+                var school_input = new Array();
+                var major_input = new Array();
+                var degree_input = new Array();
+                var e_year_input = new Array();
+                var g_year_input = new Array();
                 
-                document.getElementById("pe_school_input").style.display = "none";//입력폼 숨김
-                document.getElementById("pe_div_output").style.display = "block";//출력태그 보임
+                for(var i=0;i<=school_count;i++){
+                    school_input.push(document.getElementById("pe_school_input"+i).value); //입력값 읽어와서
+                    major_input.push(document.getElementById("pe_major_input"+i).value);
+                    degree_input.push(document.getElementById("pe_degree_input"+i).value);
+                    e_year_input.push(document.getElementById("pe_e_year_input"+i).value);
+                    g_year_input.push(document.getElementById("pe_g_year_input"+i).value);
+        
+                    document.getElementById("pe_img_output"+i).innerHTML = "<img src='../../assets/image/i_school_img.png'>"; //출력
+                    document.getElementById("pe_school_output"+i).innerHTML = school_input[i]; //출력
+                    document.getElementById("pe_major_output"+i).innerHTML = major_input[i]+"("+ degree_input[i]  + ")"; //출력
+                    document.getElementById("pe_year_output"+i).innerHTML = e_year_input[i]+"년 ~ "+g_year_input[i]+"년" ; //출력
+                    document.getElementById("pe_div_output"+i).style.display = "block";//출력태그 보임
+                    //document.getElementById("pe_school_output"+i).style.display = "block";//출력태그 보임
+                    //document.getElementById("pe_major_output"+i).style.display = "block";//출력태그 보임
+                    //document.getElementById("pe_year_output"+i).style.display = "block";//출력태그 보임
+                    
+                  
+                    for (var j=0; j<document.getElementsByName("school_title").length; j++) {
+                       document.getElementsByName("school_title")[j].style.display = "none";
+                    }
+                 
+                    document.getElementById("pe_school_input"+i).style.display = "none";//입력폼 숨김
+                    document.getElementById("pe_major_input"+i).style.display = "none";//입력폼 숨김
+                    document.getElementById("pe_degree_input"+i).style.display = "none";//입력폼 숨김
+                    document.getElementById("pe_e_year_input"+i).style.display = "none";//입력폼 숨김
+                    document.getElementById("pe_g_year_input"+i).style.display = "none";//입력폼 숨김
+                    document.getElementById("btn_school_add"+i).style.display = "none";      
+                }
+                document.getElementById("pe_school_btns").style.display = "none";
+            }
 
-                document.getElementsByName("nm_title")[0].style.display = "none";
-                for(var i=0; i<7; i++){
-                    document.getElementsByName("pe_div")[i].style.display = "none";
-                }
-                for(var i=0; i<4; i++){ //타이틀 숨김
-                    document.getElementsByName("nm_title")[i].style.display = "none";
-                }
-                for(var i=0; i<2; i++){ //화살표 숨김
-                    document.getElementsByName("nm_arrow")[i].style.display = "none";
-                }
+            function school_add(){
+                school_count++;
+                
+                var addedFormDiv=document.getElementById("addedSchoolDiv");
+                var addedDiv = document.createElement("div"); //전체 div 생성
+                addedDiv.setAttribute("id", "school_Div"+school_count); //div의 id 카운팅
+
+                var school_outDiv = document.createElement("div"); //결과 출력되는 부분
+                var img_out = document.createElement("img");
+                var school_out = document.createElement("p");
+                var major_out = document.createElement("p");
+                var year_out = document.createElement("p");
+
+                school_outDiv.setAttribute("id", "pe_div_output"+school_count);
+
+                img_out.setAttribute("id", "pe_img_output"+school_count);
+                img_out.setAttribute("class", "pe_school_img");
+                img_out.setAttribute("src", "../../assets/image/i_school_img.png");
+
+                school_out.setAttribute("id", "pe_school_output"+school_count);
+                school_out.setAttribute("class", "pe_school_name");
+
+                major_out.setAttribute("id", "pe_major_output"+school_count);
+                major_out.setAttribute("class", "pe_school_info");
+
+                year_out.setAttribute("id", "pe_year_output"+school_count);
+                year_out.setAttribute("class", "pe_school_info");
+
+                school_outDiv.appendChild(img_out);
+                school_outDiv.appendChild(school_out);
+                school_outDiv.appendChild(major_out);
+                school_outDiv.appendChild(year_out);
+        
+                /*기관명*/
+                var school_div1 = document.createElement("div"); //기관명 div
+
+                var school_title1 = document.createElement("p"); //기관명 타이틀
+                school_title1.setAttribute("class", "pe_title");
+                var school_txt1 = document.createTextNode("기관명");
+                school_title1.appendChild(school_txt1);
+                school_title1.setAttribute("name", "school_title");
+
+                var school_in = document.createElement("input");
+                school_in.setAttribute("id", "pe_school_input"+school_count);
+                school_in.setAttribute("class", "pe_input");
+                school_in.autocomplete="off";
+                school_in.type="text";
+                school_in.placeholder="학교, 연구실, 교육기관 등을 입력하세요.";
+                school_in.style.width="382px";
+              
+                /*전공*/
+                var school_div2 = document.createElement("div"); //전공 div
+                school_div2.style.float="left";
+                school_div2.style.width="32%";
+
+                var school_title2 = document.createElement("p"); //전공 타이틀
+                school_title2.setAttribute("class", "pe_title");
+                var school_txt2 = document.createTextNode("전공");
+                school_title2.appendChild(school_txt2);
+                school_title2.setAttribute("name", "school_title");
+
+                var major_in = document.createElement("input");
+                major_in.setAttribute("id", "pe_major_input"+school_count);
+                major_in.setAttribute("class", "pe_input");
+                major_in.type="text";
+                major_in.placeholder="전공명을 입력하세요."
+                major_in.autocomplete="off";
+                major_in.style.width="142px";
+
+                /*학위*/
+                var school_div3 = document.createElement("div"); //학위 div
+                school_div3.setAttribute("class", "pe_parent");
+                
+                var school_title3 = document.createElement("p"); //학위 타이틀
+                school_title3.setAttribute("class", "pe_title");
+                var school_txt3 = document.createTextNode("학위");
+                school_title3.appendChild(school_txt3);
+                school_title3.setAttribute("name", "school_title");
+                
+                var degree_in = document.createElement("select");
+                degree_in.setAttribute("id", "pe_degree_input"+school_count);
+                degree_in.setAttribute("class", "pe_level_inputc");
+                degree_in.style.width="204px";
+                degree_in.style.marginLeft="0px";
+
+                var degree_opt1 = document.createElement("option");
+                var degree_opt2 = document.createElement("option");
+                var degree_opt3 = document.createElement("option");
+
+                degree_opt1.text="학사";
+                degree_opt2.text="석사";
+                degree_opt3.text="박사";
+               
+                degree_in.options.add(degree_opt1);
+                degree_in.options.add(degree_opt2);
+                degree_in.options.add(degree_opt3);
+
+                /*입학연도*/
+                var school_div4 = document.createElement("div"); //입학연도 div
+                school_div4.style.float="left";
+                school_div4.style.paddingRight="20px";
+
+                var school_title4 = document.createElement("p"); //입학연도 타이틀
+                school_title4.setAttribute("class", "pe_title");
+                var school_txt4 = document.createTextNode("입학연도");
+                school_title4.appendChild(school_txt4);
+                school_title4.setAttribute("name", "school_title");
+
+                var e_in = document.createElement("input");
+                e_in.setAttribute("id", "pe_e_year_input"+school_count);
+                e_in.setAttribute("class", "pe_input");
+                e_in.type="year";
+                e_in.placeholder="YYYY";
+                e_in.autocomplete="off";
+                e_in.style.width="130px";
+
+                 /*졸업연도*/
+                var school_div5 = document.createElement("div"); //졸업연도 div
+
+                var school_title5= document.createElement("p"); //졸업연도 타이틀
+                school_title5.setAttribute("class", "pe_title");
+                var school_txt5 = document.createTextNode("졸업연도");
+                school_title5.appendChild(school_txt5);
+                school_title5.style.marginLeft="190px";
+                school_title5.setAttribute("name", "school_title");
+
+                var g_in = document.createElement("input");
+                g_in.setAttribute("id", "pe_g_year_input"+school_count);
+                g_in.setAttribute("class", "pe_input");
+                g_in.type="year";
+                g_in.placeholder="YYYY";
+                g_in.autocomplete="off";
+                g_in.style.width="130px";
+                g_in.style.marginLeft="20px";
+
+                 /*추가 버튼*/
+                var school_div6 = document.createElement("div"); //추가버튼 div
+                school_div6.style.float="right";
+                school_div6.style.marginRight="17px";
+                school_div6.style.marginTop="-42px";
+
+                var s_btn_add = document.createElement("button");
+                s_btn_add.innerHTML="+ 추가";
+                s_btn_add.onclick=school_add;
+                s_btn_add.setAttribute("class", "pe_button");
+                s_btn_add.setAttribute("id", "btn_school_add"+school_count);
+                s_btn_add.type="button";
+                s_btn_add.style.backgroundColor="rgba(139, 139, 139, 0.15)";
+                s_btn_add.style.width="69px";
+                s_btn_add.style.height="35px";
+
+                school_div1.appendChild(school_title1);
+                school_div1.appendChild(school_in);
+
+                school_div2.appendChild(school_title2);
+                school_div2.appendChild(major_in);
+
+                school_div3.appendChild(school_title3);
+                school_div3.appendChild(degree_in);
+
+                school_div4.appendChild(school_title4);
+                school_div4.appendChild(e_in);
+
+                school_div5.appendChild(school_title5);
+                school_div5.appendChild(g_in);
+                
+                school_div6.appendChild(s_btn_add);
+
+                addedDiv.appendChild(school_outDiv);
+                addedDiv.appendChild(school_div1);
+                addedDiv.appendChild(school_div2);
+                addedDiv.appendChild(school_div3);
+                addedDiv.appendChild(school_div4);
+                addedDiv.appendChild(school_div5);
+                addedDiv.appendChild(school_div6);
+                
+                addedFormDiv.appendChild(addedDiv);
+                
+                var tmp = school_count-1;
+
+                document.getElementById("btn_school_add"+tmp).style.display = "none";
+                document.getElementById("pe_div_output"+school_count).style.display = "none";
             }
 
             function work_edit(){
@@ -335,8 +540,6 @@
                 document.getElementById("pe_work1").style.display = "none";//입력폼 숨김
                 document.getElementById("pe_work2").style.display = "none";//입력폼 숨김
                 document.getElementById("pe_work3").style.display = "none";//입력폼 숨김
-                
-                
 
                 document.getElementById("pe_work_btns").style.display = "none";
             }
