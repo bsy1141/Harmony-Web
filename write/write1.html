@@ -21,7 +21,7 @@
 			
 				<hr class="line">
 			
-				<div>
+				<div style="height: 600px; overflow: auto;">
 			
 					<div style="float: left; margin-left: 37px;">
 						<p class="subTitle">활동 사진</p>
@@ -66,10 +66,13 @@
 						
 			
 						<div id="qDiv">
-                            <p class="questionText" id="qEx">활동을 위해 필요한 능력은 무엇이라고 생각하나요?</p>
-							<input type="image" src="../image/small_close.png" class="smallButton" onclick="removeQuestion(this)">
-							<textarea placeholder="답변을 입력하세요."
-							class="answer"></textarea>
+                            <div>
+                                <p class="questionText" id="qEx">활동을 위해 필요한 능력은 무엇이라고 생각하나요?</p>
+                                <input type="image" src="../image/small_close.png" class="smallButton" onclick="removeQuestion()">
+                            </div>
+                            <textarea placeholder="답변을 입력하세요."
+                            class="answer"></textarea>
+							
                         </div>
                         <div id="field"></div>
 					</div>   
@@ -98,25 +101,23 @@
 		
 				<hr class="line">
 		
-				<div class="projectBox">
-					<div class="projectUnselect">
+				<div class="projectBox" style="height: 600px; overflow: auto;">
+					<div id="p1" class="projectUnselect">
 						<p class="projectTitle">롯데 U-프렌즈 10기</p>
 						<p class="projectDuration">2020.01.23-06.25</p>
 					</div>
-					<div class="projectUnselect">
+					<div id="p2" class="projectUnselect">
 						<p class="projectTitle">삼성그룹 서포터즈 9기</p>
 						<p class="projectDuration">2020.01.23-06.25</p>
 					</div>
-					<div class="projectUnselect">
+					<div id="p3" class="projectUnselect">
 						<p class="projectTitle">SK SUNNY 2020</p>
 						<p class="projectDuration">2020.01.23-06.25</p>
 					</div>
-					<div class="projectUnselect">
+					<div id="p4" class="projectUnselect">
 						<p class="projectTitle">중앙일보 대학생 서포터즈</p>
 						<p class="projectDuration">2020.01.23-06.25</p>
-					</div>
-					
-		
+					</div>	
 				
 				</div>         
 				
@@ -139,7 +140,7 @@
         
                 <hr class="line">
         
-                <div>
+                <div style="height: 600px; overflow: auto;">
                     <div style="text-align: center;">
                         <p class="qNumText">선택한 질문 수: </p>
                         <p class="qNum" id="qNum"> </p>
@@ -219,6 +220,60 @@
         var qNum = 0;  	
         var qNumText = document.getElementById("qNum");
         var q = document.getElementById("qEx");
+
+        //프로젝트 선택 변수
+        var projectSeleted1 = false;
+        var projectSeleted2 = false;
+        var projectSeleted3 = false;
+        var projectSeleted4 = false;
+        var p1 =document.getElementById("p1");
+        var p2 =document.getElementById("p2");
+        var p3 =document.getElementById("p3");
+        var p4 =document.getElementById("p4");
+
+        p1.onclick = () => {
+            if(!projectSeleted1){
+                p1.style.backgroundColor = "darkgrey";
+                projectSeleted1 = true;
+            }
+            else{
+                p1.style.backgroundColor = "#d0d0d0";
+                projectSeleted1 = false;
+            }            
+        }
+
+        p2.onclick = () => {
+            if(!projectSeleted1){
+                p2.style.backgroundColor = "darkgrey";
+                projectSeleted1 = true;
+            }
+            else{
+                p2.style.backgroundColor = "#d0d0d0";
+                projectSeleted1 = false;
+            }            
+        }
+
+        p3.onclick = () => {
+            if(!projectSeleted1){
+                p3.style.backgroundColor = "darkgrey";
+                projectSeleted1 = true;
+            }
+            else{
+                p3.style.backgroundColor = "#d0d0d0";
+                projectSeleted1 = false;
+            }            
+        }
+
+        p4.onclick = () => {
+            if(!projectSeleted1){
+                p4.style.backgroundColor = "darkgrey";
+                projectSeleted1 = true;
+            }
+            else{
+                p4.style.backgroundColor = "#d0d0d0";
+                projectSeleted1 = false;
+            }            
+        }
     
         //madal popup 및 버튼 관련
 		open.onclick = () => {
@@ -325,9 +380,10 @@
                 }
             }
 
-            for(var i=0; i<qList.le; i++){
+            for(var i=0; i<qList.length; i++){
                 if(qList[0] == true){  
                     div.innerHTML = document.getElementById('qDiv').innerHTML;
+                    document.getElementById('qEx').innerText = "dddd";
                     document.getElementById('field').appendChild(div);             
                 } 
 
@@ -363,7 +419,6 @@
         function removeQuestion(obj){
             document.getElementById('field').removeChild(obj.parentNode);
         }
-
 
 		</script>
 	</body>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Child</title>
+    <link rel="stylesheet" href="testcss.css">
+ 
+    <script type="text/javascript">
+        function setParentText(){
+             opener.document.getElementById("pInput").value = document.getElementById("cInput").value
+        }
+   </script>
+ 
+</head>
+<body>
+    <div id="qDiv">
+        <p class="questionText" id="qEx">활동을 위해 필요한 능력은 무엇이라고 생각하나요?</p>
+        <input type="image" src="../image/small_close.png" class="smallButton" onclick="removeQuestion(this)">
+        <textarea placeholder="답변을 입력하세요."
+        class="answer"></textarea>
+</body>
+</html>
