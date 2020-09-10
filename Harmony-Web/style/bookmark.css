@@ -1,3 +1,4 @@
+/*글꼴 적용하려면 필요*/
 @font-face{
     font-family: "KoPubWorldDotumBold";
     src: url(../assets/font/KoPubWorld\ Dotum\ Bold.ttf);
@@ -6,6 +7,11 @@
 @font-face{
     font-family: "KoPubWorldDotumMedium";
     src: url(../assets/font/KoPubWorld\ Dotum\ Medium.ttf);
+}
+
+@font-face{
+    font-family: "KoPubWorldDotum";
+    src: url(../assets/font/KoPubWorld\ Dotum\ Light.ttf);
 }
 
 body{
@@ -107,7 +113,7 @@ td{
     width: 290px;
     height: 22px;
     opacity: 0.79;
-    font-family: KoPubWorldDotum;
+    font-family: KoPubWorldDotumMedium;
     font-size: 14px;
     font-weight: 300;
     font-stretch: normal;
@@ -118,5 +124,6 @@ td{
     margin-top: 34px;
     position: absolute;
     left: 50%;
+    text-align: center;
     transform: translate(-50%, 380%);
 }

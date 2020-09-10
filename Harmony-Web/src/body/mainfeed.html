@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../style/mainfeed.css">
+</head>
+<body>
+    <div class="top">
+        <button class="harmony">
+            <img src="../../assets/image/icon8.png" class="harmony_logo">
+        </button>
+        <input type="text" class="find" placeholder="     검색">
+        <button class="findbtn">
+            <img src="../../assets/image/icon10.png" class="findbtnimg">
+        </button>
+        <button id="btn" class="write_post">게시글 작성</button>
+        <button id="btn" class="mypage">마이페이지</button>
+        <button id="btn" class="bookmark">북마크</button>
+        <button class="alarm">
+            <img src="../../assets/image/icon7.png" class="alarm_photo">
+        </button>
+        <div id="prof_photo" class="photo1">
+            <img src="../../assets/image/icon9.png" class="human">
+        </div>
+        <div class="prof_name">김유민</div>
+    </div>
+    
+    <div class="post">
+        <div class="photo"></div>
+        
+        <div class="profile">
+            <div id="prof_photo" class="photo2"></div>
+            <div class="name">김유민</div>
+            <div class="posttime">1주 전</div>
+            <div class="follow">팔로잉</div>
+            <div id="line" class="line1"></div>
+        </div>
+
+        <div class="contents">
+            <div class="title">[롯데 U-프렌즈 10기 발대식]</div>
+            <div class="cont">그동안 기다려왔던 발대식을 드디어 다녀왔습니다! 발대식은 롯데 월드 타워에서 진행되었으며, 특별히 롯데지주 커뮤니케이션 실장 오성엽 사장님이 참석하셔서 따뜻한 환영사를 말씀해주셨습니다 :) </div>
+            <div class="hashtag"># 해시태그</div>
+            <div id="line" class="line2"></div>
+        </div>
+
+        <div class="show">
+            <div class="like">좋아요&nbsp0개</div>
+            <button id="btn_heart" class="heart" onclick="clickHeart()" style="background: url('../../assets/image/icon4.png') no-repeat;"></button>
+            <p class="heart_cnt"></p>
+            <button class="message"></button>
+            <p class="message_cnt"></p>
+            <button id="btn_bookmark" class="bm" onclick="addBookmark()"></button>
+            <p class="bm_cnt"></p>
+            <div id="line" class="line3"></div>
+        </div>
+
+        <div class="comment" style="width:388px; height: 260.8px; overflow-y: scroll;">
+            <div id="addedCommentDiv"> </div>
+        </div>
+        <div id="line" class="line4"></div>
+        <input type="text" class="write_comment" placeholder="  새 댓글을 입력하세요.">
+        <button class="enroll" onclick="enrollComment(document.querySelector('.write_comment'), 1)" type="button">등록</button> 
+        
+
+        <script>
+            var heart_count = 0; //임시, 나중에 DB에서 받아와야됨
+            var heart_flag = 0; //좋아요 클릭한 글인지 확인. 얘도 DB. 0이면 클릭X
+            document.querySelector(".heart_cnt").innerHTML=0; //임시
+            document.querySelector(".message_cnt").innerHTML=0; //임시
+            document.querySelector(".bm_cnt").innerHTML=0; //임시
+
+            function clickHeart(){
+                if(heart_flag == 0){ //좋아요
+                    heart_flag=1;
+                    heart_count++;
+                    document.querySelector(".like").innerHTML="좋아요 "+heart_count+"개";
+                    document.querySelector(".heart_cnt").innerHTML=heart_count;
+                }
+                else if(heart_flag == 1){ //좋아요 취소
+                    heart_flag = 0;
+                    heart_count--;
+                    document.querySelector(".like").innerHTML="좋아요 "+heart_count+"개";
+                    document.querySelector(".heart_cnt").innerHTML=heart_count;
+                }
+            }
+
+            function addBookmark(){
+
+            }
+
+            //타임스탬프 만들기
+            function generateTime(value){
+                const today = new Date();
+
+                const timeValue = new Date(value);
+
+                const betweenTime = Math.floor((today.getTime() - timeValue.getTime()) / 1000 / 60);
+                if (betweenTime < 1) return '방금전';
+                if (betweenTime < 60) {
+                    return `${betweenTime}분전`;
+                }
+
+                const betweenTimeHour = Math.floor(betweenTime / 60);
+                if (betweenTimeHour < 24) {
+                    return `${betweenTimeHour}시간전`;
+                }
+
+                const betweenTimeDay = Math.floor(betweenTime / 60 / 24);
+                if (betweenTimeDay < 365) {
+                    return `${betweenTimeDay}일전`;
+                }
+
+                return `${Math.floor(betweenTimeDay / 365)}년전`;
+    
+            }
+
+
+            var commentLikeCnt = 0;
+            var commentLikeFlag = 0;
+
+            var commentCnt = 0;
+
+            function enrollComment(input, whichComment){
+                var imgDiv = document.createElement("div");
+                var txtDiv = document.createElement("div");
+
+                var userImg = document.createElement("img");
+                var userName = document.createElement("p");
+                var btn_like = document.createElement("button");
+                var date = document.createElement("p");
+                var inputValue = document.createElement("p");
+                var commentLike = document.createElement("p");
+                var btn_reComment = document.createElement("button");
+                var addedCommentDiv = document.getElementById("addedCommentDiv");
+                
+                var addedReCommentDiv = document.createElement("div");
+
+                //유저네임과 이미지 가져오기
+                userImg.setAttribute("src", "../../assets/image/icon9.png"); //임시
+                userImg.style.width="37px";
+                userImg.style.height="37px";
+                userImg.style.borderRadius="50%";
+                userName.innerHTML = "박서혜"; //임시
+                
+                userName.setAttribute("class", "comment_name");
+
+                //타임스탬프 찍기
+                var enroll_date = new Date();
+                date.innerHTML = generateTime(enroll_date);
+                date.setAttribute("class", "comment_info");
+               
+                //댓글 좋아요버튼
+                btn_like.innerHTML = "<img src='../../assets/image/icon4.png'>";
+
+                //입력값 출력
+                inputValue.innerHTML = input.value;
+
+                //좋아요 수
+                commentLike.innerHTML = "좋아요 " + commentLikeCnt;
+                commentLike.setAttribute("class", "comment_info");
+                commentLike.style.float="left";
+
+                //답글 달기 버튼
+                btn_reComment.innerHTML = "답글 달기";
+                btn_reComment.setAttribute("class", "reCommentBtn");
+                
+                imgDiv.appendChild(userImg);
+                txtDiv.appendChild(userName);
+                txtDiv.appendChild(date);
+                txtDiv.appendChild(btn_like);
+                txtDiv.appendChild(inputValue);
+                txtDiv.appendChild(commentLike);
+                txtDiv.appendChild(btn_reComment);
+
+                userName.style.float="left";
+                date.style.float="left";
+                date.style.marginTop="14.2px";
+                date.style.marginLeft="-9px";
+                btn_like.style.border="none";
+                btn_like.style.backgroundColor="#ffffff";
+                btn_like.style.marginTop="13px";
+                
+                if(whichComment==1){
+                    btn_like.style.marginLeft="150px";
+
+                    imgDiv.style.float="left";
+                    imgDiv.style.paddingLeft="26px";
+                    imgDiv.style.marginTop="26px";
+                    
+                    txtDiv.style.float="left";
+                    txtDiv.style.marginLeft="21px";
+                    txtDiv.style.width="270px";
+                    
+                    txtDiv.style.marginTop="10px";
+                    txtDiv.style.border="solid";
+                }
+                    
+                else if(whichComment==2){
+                    btn_like.style.marginLeft="130px";
+
+                    imgDiv.style.float="left";
+                    imgDiv.style.paddingLeft="46px";
+                    imgDiv.style.marginTop="26px";
+                    
+                    txtDiv.style.float="left";
+                    txtDiv.style.marginLeft="21px";
+                    txtDiv.style.width="270px";
+                    
+                    txtDiv.style.marginTop="10px";
+                    txtDiv.style.border="solid";
+
+                    btn_reComment.style.display="none";
+                }
+
+                addedCommentDiv.appendChild(imgDiv);
+                addedCommentDiv.appendChild(txtDiv);
+
+                commentCnt++;
+                document.querySelector(".message_cnt").innerHTML=commentCnt;
+                
+                //댓글 좋아요
+                btn_like.addEventListener('click', function(event){
+                    if(commentLikeFlag == 0){ //좋아요
+                        commentLikeFlag=1;
+                        commentLike.innerHTML = "좋아요 " + (++commentLikeCnt);
+                    }
+                    else if(commentLikeFlag == 1){ //좋아요 취소
+                        commentLikeFlag = 0;
+                        commentLike.innerHTML = "좋아요 " + (--commentLikeCnt);
+                    }
+                });
+
+                var reCommentInput = document.createElement("input");
+                var btn_reEnroll = document.createElement("button");
+
+                reCommentInput.type="text";
+                reCommentInput.setAttribute("class", "re_write_comment");
+                reCommentInput.placeholder="  답글을 입력하세요.";
+
+                btn_reEnroll.type="button";
+                btn_reEnroll.innerText="등록";
+                btn_reEnroll.setAttribute("class", "re_enroll");
+
+                addedReCommentDiv.appendChild(reCommentInput);
+                addedReCommentDiv.appendChild(btn_reEnroll);
+
+                addedCommentDiv.appendChild(addedReCommentDiv);
+
+
+                //댓글에 답글 달기
+                btn_reComment.addEventListener('click', function(event){
+                    reCommentInput.style.display="inline";
+                    btn_reEnroll.style.display="inline";
+                });
+
+                //답글 등록하기
+                btn_reEnroll.addEventListener('click', function(event){
+                    reCommentInput.style.display="none";
+                    btn_reEnroll.style.display="none";
+                    enrollComment(document.querySelector('.re_write_comment'), 2);
+                });
+            }
+        </script>
+
+        
+    </div>
+</body>

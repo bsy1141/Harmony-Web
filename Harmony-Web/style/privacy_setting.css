@@ -1,3 +1,4 @@
+/*글꼴 적용하려면 필요*/
 @font-face{
     font-family: "KoPubWorldDotumBold";
     src: url(../assets/font/KoPubWorld\ Dotum\ Bold.ttf);
@@ -6,6 +7,11 @@
 @font-face{
     font-family: "KoPubWorldDotumMedium";
     src: url(../assets/font/KoPubWorld\ Dotum\ Medium.ttf);
+}
+
+@font-face{
+    font-family: "KoPubWorldDotum";
+    src: url(../assets/font/KoPubWorld\ Dotum\ Light.ttf);
 }
 
 body{

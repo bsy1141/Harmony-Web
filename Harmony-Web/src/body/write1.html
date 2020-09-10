@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="writeStyle.css">
+	</head>
+
+	<body>
+	
+		<button id="open">게시글 작성</button>
+	
+		<!--게시글 작성 첫번째 화면-->		
+		<div id="write1" class="modal-wrapper" style="display: none">
+			<div class="modal">
+				<div>
+					<p class="title">게시글 작성</p>     
+				</div>
+				<div>        
+					<input type="image" id="close1" src="../../assets/image/close.png" class="closeButton">   
+				</div>
+			
+				<hr class="line">
+			
+				<div style="height: 600px; overflow: auto;">
+			
+					<div style="float: left; margin-left: 37px;">
+						<p class="subTitle">활동 사진</p>
+			
+						<div class="pictureBox" id="imgBox">
+							<input type="image" id="picture" src="../../assets/image/directory.png" class="pictureButton">
+							<input type="file" id="upImgFile" onChange="uploadImgPreview();" accept="../../assets/image/*" style="display: none;">
+							<img id="thumbnailImg" src="" class="preview">
+						</div>
+			
+						<p class="subTitle" style="margin-top: 28px;">활동명</p>
+				
+						<textarea name="activityName" placeholder="활동명을 입력하세요." 
+						class="editBox" style="height: 56px;"></textarea>
+			
+				
+					</div>            
+					
+			
+					<div style="float: left; margin-left: 37px;">
+						<p class="subTitle">내용</p>
+			
+						<textarea type="text" name="activityText" placeholder="활동에 대해 간단하게 소개해보세요." 
+						class="editBox" style="height: 123px;"></textarea>
+				
+						<p class="subTitle">태그</p>
+						<textarea type="text" name="activityTag" placeholder="태그를 입력하세요." 
+						class="editBox" style="height: 56px;"></textarea>
+				
+						<div>
+							<p class="subTitle" style="float: left;">질문</p>
+							<div style="float: right;">
+								<input type="image" id="qAdd1" src="../../assets/image/small_plus.png" class="plusButton">
+								<input type="button" id="qAdd2" value="추가" class="addButton">
+							</div>                
+						</div>
+			
+						<div class="question">
+							<img src="../../assets/image/bulb.png" class="bulb">
+							<p class="explanationText">질문을 선택해 응답을 통해<br>프로젝트에 대해 쉽게 소개할 수 있어요!</p>
+						</div>
+						
+			
+						<div id="qDiv">
+                            <div>
+                                <p class="questionText" id="qEx">활동을 위해 필요한 능력은 무엇이라고 생각하나요?</p>
+                                <input type="image" src="../../assets/image/small_close.png" class="smallButton" onclick="removeQuestion()">
+                            </div>
+                            <textarea placeholder="답변을 입력하세요."
+                            class="answer"></textarea>
+							
+                        </div>
+                        <div id="field"></div>
+					</div>   
+					
+					
+				</div>
+				
+				
+				<div style="text-align: center; clear: left;">  
+					<input type="button" id="cancel1" value="취소" class="button" style="background-color: #f7f7f7;" />
+					<input type="button" id="next" value="다음" class="button" style="background-color: #d8d8d8;" />
+				</div> 
+			
+			</div>
+		</div>
+		
+		<!--게시글 작성 두번째 화면-->		
+		<div id="write2" class="modal-wrapper" style="display: none; background-color: #00ff0000;">
+			<div class="modal">
+				<div>
+					<p class="title">프로젝트 선택</p>         
+				</div>
+				<div>        
+					<input type="image" id="close2" src="../../assets/image/close.png" class="closeButton">   
+				</div>
+		
+				<hr class="line">
+		
+				<div class="projectBox" style="height: 600px; overflow: auto;">
+					<div id="p1" class="projectUnselect">
+						<p class="projectTitle">롯데 U-프렌즈 10기</p>
+						<p class="projectDuration">2020.01.23-06.25</p>
+					</div>
+					<div id="p2" class="projectUnselect">
+						<p class="projectTitle">삼성그룹 서포터즈 9기</p>
+						<p class="projectDuration">2020.01.23-06.25</p>
+					</div>
+					<div id="p3" class="projectUnselect">
+						<p class="projectTitle">SK SUNNY 2020</p>
+						<p class="projectDuration">2020.01.23-06.25</p>
+					</div>
+					<div id="p4" class="projectUnselect">
+						<p class="projectTitle">중앙일보 대학생 서포터즈</p>
+						<p class="projectDuration">2020.01.23-06.25</p>
+					</div>	
+				
+				</div>         
+				
+				<div style="text-align: center;">  
+					<input type="button" id="cancel2" value="취소" class="button" style="margin-top: 40px; background-color: #f7f7f7;" />
+					<input type="button" id="complete" value="완료" class="button" style="margin-top: 40px; background-color: #d8d8d8;" />
+				</div> 
+
+			</div>
+        </div>		
+        
+        <div id="questionList" class="modal-wrapper" style="display: none; background-color: #00ff0000;">
+			<div class="modal">
+                <div>
+                    <p class="title">질문 리스트</p>         
+                </div>
+                <div>        
+                    <input type="image" src="../../assets/image/close.png" class="closeButton">   
+                </div>
+        
+                <hr class="line">
+        
+                <div style="height: 600px; overflow: auto;">
+                    <div style="text-align: center;">
+                        <p class="qNumText">선택한 질문 수: </p>
+                        <p class="qNum" id="qNum"> </p>
+                    </div>
+        
+                    <div>
+                        <p class="questionTitleBold">활동 시작 전</p>
+                        <p class="questionTitle"> 추천 질문</p>
+                        <hr class="qLine">
+                        <div class="check" >           
+                            <input type="checkbox" id="q1" name="question[]" onClick="checkEvent(this)">
+                            <label for="q1">
+                                <span>활동을 위해 필요한 능력은 무엇이라고 생각하나요?</span>
+                            </label>    
+                        </div>  
+                        <div class="check" >           
+                            <input type="checkbox" id="q2" name="question[]" onClick="checkEvent(this)">
+                            <label for="q2">
+                                <span>이 활동을 결정하신 이유는 무엇인가요?</span>
+                            </label>    
+                        </div> 
+                        <div class="check" >           
+                            <input type="checkbox" id="q3" name="question[]" onClick="checkEvent(this)">
+                            <label for="q3">
+                                <span>이 활동을 통해 얻고 싶은 것은 무엇인가요?</span>
+                            </label>    
+                        </div> 
+                        <div class="check" >           
+                            <input type="checkbox" id="q4" name="question[]" onClick="checkEvent(this)">
+                            <label for="q4">
+                                <span>이 활동의 차별점을 말해주세요.</span>
+                            </label>    
+                        </div> 
+                        <div class="check" >           
+                            <input type="checkbox" id="q5" name="question[]" onClick="checkEvent(this)"> 
+                            <label for="q5">
+                                <span>자신이 맡은 역할이 무엇인가요? 그 역할이 자신의 적성에 맞을 것 같나요?</span>
+                            </label>    
+                        </div> 
+                        <div class="check" >           
+                            <input type="checkbox" id="q6" name="question[]" onClick="checkEvent(this)">
+                            <label for="q6">
+                                <span>활동에서 기대되는 바가 있나요?</span>
+                            </label>    
+                        </div> 
+                    </div>
+                 
+                </div>         
+                
+                <div style="text-align: center;">  
+                    <input type="button" id="qCancel" value="취소" class="button" style="background-color: #f7f7f7;" />
+                    <input type="button" id="qNext" value="다음" class="button" style="background-color: #d8d8d8;" />
+                </div>
+            </div>
+        </div>
+
+		<script>
+		//열기, 닫기, 다음 버튼 변수
+		var open = document.getElementById("open");
+		var close1 = document.getElementById("close1");
+		var close2 = document.getElementById("close2");
+		var next = document.getElementById("next");
+		var cancel1 = document.getElementById("cancel1");
+		var cancel2 = document.getElementById("cancel2");
+		var complete = document.getElementById("complete");        
+        var qAdd1 = document.getElementById("qAdd1");
+        var qAdd2 = document.getElementById("qAdd2");
+        var qCancel = document.getElementById("qCancel");
+        var qNext = document.getElementById("qNext");
+
+        //모달 변수
+		var modal1 = document.getElementById("write1");
+		var modal2 = document.getElementById("write2");
+        var modal3 = document.getElementById("questionList");
+        
+        //질문 페이지 관련 변수
+        var qNum = 0;  	
+        var qNumText = document.getElementById("qNum");
+        var q = document.getElementById("qEx");
+
+        //프로젝트 선택 변수
+        var projectSeleted1 = false;
+        var projectSeleted2 = false;
+        var projectSeleted3 = false;
+        var projectSeleted4 = false;
+        var p1 =document.getElementById("p1");
+        var p2 =document.getElementById("p2");
+        var p3 =document.getElementById("p3");
+        var p4 =document.getElementById("p4");
+
+        p1.onclick = () => {
+            if(!projectSeleted1){
+                p1.style.backgroundColor = "darkgrey";
+                projectSeleted1 = true;
+            }
+            else{
+                p1.style.backgroundColor = "#d0d0d0";
+                projectSeleted1 = false;
+            }            
+        }
+
+        p2.onclick = () => {
+            if(!projectSeleted1){
+                p2.style.backgroundColor = "darkgrey";
+                projectSeleted1 = true;
+            }
+            else{
+                p2.style.backgroundColor = "#d0d0d0";
+                projectSeleted1 = false;
+            }            
+        }
+
+        p3.onclick = () => {
+            if(!projectSeleted1){
+                p3.style.backgroundColor = "darkgrey";
+                projectSeleted1 = true;
+            }
+            else{
+                p3.style.backgroundColor = "#d0d0d0";
+                projectSeleted1 = false;
+            }            
+        }
+
+        p4.onclick = () => {
+            if(!projectSeleted1){
+                p4.style.backgroundColor = "darkgrey";
+                projectSeleted1 = true;
+            }
+            else{
+                p4.style.backgroundColor = "#d0d0d0";
+                projectSeleted1 = false;
+            }            
+        }
+    
+        //madal popup 및 버튼 관련
+		open.onclick = () => {
+		  modal1.style.display = "flex";
+		};
+	
+		close1.onclick = () => {
+		  modal1.style.display = "none";
+		};
+
+		close2.onclick = () => {
+		  modal1.style.display = "none";
+		  modal2.style.display = "none";
+		};
+		
+		next.onclick = () => {
+		  modal2.style.display = "flex";
+		};
+
+		cancel1.onclick = () => {
+		  modal1.style.display = "none";
+		};
+
+		cancel2.onclick = () => {
+		  modal2.style.display = "none";
+		};
+
+		complete.onclick = () => {
+			modal1.style.display = "none";
+			modal2.style.display = "none";
+		}
+
+        qAdd1.onclick = () => {
+		  modal3.style.display = "flex";
+          qListSetting()
+		};
+
+        qAdd2.onclick = () => {
+		  modal3.style.display = "flex";
+          qListSetting()
+		};
+
+        qCancel.onclick = () => {
+		  modal3.style.display = "none";
+		};
+
+        qNext.onclick = () => {            
+          questionUpdate();
+		};
+
+		//이미지 버튼이 이미지 업로드 할 수 있도록 설정
+		window.onload = function() {
+               var picture = document.getElementById('picture');
+               var uploader = document.getElementById('upImgFile');
+   
+               picture.onclick=function() {
+                    uploader.click();
+               }
+            };
+            
+        function uploadImgPreview() {// breif 업로드 파일 읽기
+            let fileInfo = document.getElementById("upImgFile").files[0];
+            let reader = new FileReader();
+
+            // @details readAsDataURL( )을 통해 파일을 읽어 들일때 onload가 실행
+            reader.onload = function() {  
+                // @details 파일의 URL을 Base64 형태로 가져온다.
+                document.getElementById("thumbnailImg").src = reader.result;
+                document.getElementById("thumbnailUrl").innerText = reader.result;
+            };			
+
+    	   	if( fileInfo ) {    // @details readAsDataURL( )을 통해 파일의 URL을 읽어온다.
+            	reader.readAsDataURL( fileInfo );
+           	}
+   		}
+
+        function qListSetting(){
+            //qNum만큼 선택한 질문 수 변경하기
+            qNumText.innerText = qNum;
+            //체크되어 있는 질문에 체크박스 표시하기
+        }
+
+        function checkEvent(box){
+            if(box.checked == true){
+                qNum += 1;
+                qNumText.innerText = qNum;
+            }
+
+            else{
+                qNum -= 1;
+                qNumText.innerText = qNum;
+            }
+        }
+
+        function questionUpdate(){
+            //체크한 질문 표시하기
+            var qList = [false, false, false, false, false, false];            var div = document.createElement('div');
+            var arrQuestion = document.getElementsByName('question[]');
+            for(var i=0; i<arrQuestion.length; i++){
+                if(arrQuestion[i].checked == true){
+                    qList[i] = true;
+                    div.innerHTML = document.getElementById('qDiv').innerHTML;
+                    document.getElementById('field').appendChild(div);  
+                }
+            }
+
+            for(var i=0; i<qList.length; i++){
+                if(qList[0] == true){  
+                    div.innerHTML = document.getElementById('qDiv').innerHTML;
+                    document.getElementById('qEx').innerText = "dddd";
+                    document.getElementById('field').appendChild(div);             
+                } 
+
+                else if(qList[1] == true){  
+                    div.innerHTML = document.getElementById('qDiv').innerHTML;
+                    document.getElementById('field').appendChild(div);      
+                } 
+
+                else if(qList[2] == true){  
+                    div.innerHTML = document.getElementById('qDiv').innerHTML;
+                    document.getElementById('field').appendChild(div);      
+                } 
+
+                else if(qList[3] == true){  
+                    div.innerHTML = document.getElementById('qDiv').innerHTML;
+                    document.getElementById('field').appendChild(div);      
+                } 
+
+                else if(qList[4] == true){  
+                    div.innerHTML = document.getElementById('qDiv').innerHTML;
+                    document.getElementById('field').appendChild(div);      
+                } 
+
+                else if(qList[5] == true){  
+                    div.innerHTML = document.getElementById('qDiv').innerHTML;
+                    document.getElementById('field').appendChild(div);      
+                } 
+            }
+                    
+		    modal3.style.display = "none";
+        }
+
+        function removeQuestion(obj){
+            document.getElementById('field').removeChild(obj.parentNode);
+        }
+
+		</script>
+	</body>
+</html>
